@@ -12,10 +12,7 @@ Whether you're curious, learning yourself, or just browsing, feel free to dive i
 
 ## Example Folder Structure
 
-- `java/` — Java projects and exercises  
-- `python/` — Python scripts and challenges  
-- `javascript/` — JavaScript code snippets and projects  
-- `c++/` — C++ exercises  
+- `java/` — Java projects and exercises   
 - `README.md` — This file
 
 ## How to Use
