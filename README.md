@@ -12,7 +12,8 @@ Whether you're curious, learning yourself, or just browsing, feel free to dive i
 
 ## Example Folder Structure
 
-- `java/` — Java projects and exercises  
+- `java/` — Java projects and exercises
+- `python/` — Python projects and exercises  
 - `README.md` — This file
 
 ## How to Use
