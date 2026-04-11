@@ -18,6 +18,9 @@ public class MainMenuPanel extends JPanel {
     private Font baseTitleFont;
     private Font baseSubtitleFont;
 
+    private Image originalPlayImage;
+
+
     public MainMenuPanel(PotionMixerWindow parent) {
         this.parent = parent;
 
@@ -55,14 +58,13 @@ public class MainMenuPanel extends JPanel {
     // ---------------- BUTTON ----------------
 
     private JButton createPlayButton() {
-        ImageIcon icon = ImageLoader.loadAndScaleImageIcon(
-                "/images/pixelPlayButton.png",
-                192,
-                78,
-                "Play Button"
-        );
 
-        JButton button = new JButton(icon);
+        originalPlayImage = ImageLoader
+                .loadImage("/images/pixelPlayButton.png", "Play Button")
+                .getScaledInstance(192, 78, Image.SCALE_SMOOTH);
+
+        JButton button = new JButton(new ImageIcon(originalPlayImage));
+
         button.setBorderPainted(false);
         button.setContentAreaFilled(false);
         button.setFocusPainted(false);
@@ -72,15 +74,26 @@ public class MainMenuPanel extends JPanel {
         return button;
     }
 
+
     private void updateButtonSize() {
+
         float scale = Math.min(getWidth() / 1920f, getHeight() / 1080f);
 
         int width = (int) (192 * scale);
         int height = (int) (78 * scale);
 
+        Image scaled = originalPlayImage.getScaledInstance(
+                width,
+                height,
+                Image.SCALE_SMOOTH
+        );
+
+        playButton.setIcon(new ImageIcon(scaled));
+
         playButton.setPreferredSize(new Dimension(width, height));
         playButton.revalidate();
     }
+
 
     // ---------------- BACKGROUND ----------------
 
@@ -122,7 +135,7 @@ public class MainMenuPanel extends JPanel {
         float scale = Math.min(getWidth() / 1920f, getHeight() / 1080f);
 
         Font titleFont = baseTitleFont.deriveFont(72f * scale);
-        Font subtitleFont = baseSubtitleFont.deriveFont(28f * scale);
+        Font subtitleFont = baseSubtitleFont.deriveFont(35f * scale);
 
         String title = "AlchemyLab";
         String subtitle = "By: Maja";
