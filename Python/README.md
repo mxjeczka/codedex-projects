@@ -2,20 +2,22 @@
 
 This folder contains all my Python exercises and projects completed as part of my learning journey with Codedex.
 
-The goal of these exercises is to build a strong foundation in Python, covering core concepts such as variables, control flow, functions, and basic problem-solving.
+It includes beginner-level tasks as well as more structured exercises to build a strong foundation in Python programming.
 
-## Contents
+## 📂 Structure
 
-Each file or subfolder represents a specific exercise or mini-project.
-The projects range from simple beginner tasks to more structured challenges.
+The content is organized into subfolders and files:
+
+* `beginnercourse/` — Exercises and projects from the Python beginner course
+* Additional folders may be added as I progress further
 
 ## Topics Covered
 
-*...
+* ...
 
 ## How to Run
 
-You can run the Python files using:
+Run Python files using:
 
 ```bash
 python filename.py
@@ -25,6 +27,5 @@ Make sure Python is installed on your system.
 
 ## Notes
 
-These exercises are part of my continuous learning process.
-I will keep updating this folder as I progress and tackle more advanced Python topics.
- 
+This folder represents my progress in learning Python.
+More advanced topics and projects will be added over time as I continue improving my skills.
