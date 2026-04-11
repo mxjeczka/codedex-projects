@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="logic.PotionCombinerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-06-27T17:42:01.111Z" hostname="KROTUS-COMPUTER" time="0.02">
+  <properties/>
+  <testcase name="testKnownCombinations()" classname="logic.PotionCombinerTest" time="0.018"/>
+  <testcase name="testUnknownCombination()" classname="logic.PotionCombinerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
