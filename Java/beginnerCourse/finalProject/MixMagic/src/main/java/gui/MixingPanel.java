@@ -45,6 +45,15 @@ public class MixingPanel extends JPanel {
     private static final int RESULT_BASE_Y = 302;
     private static final int RESULT_BASE_WIDTH = 345;
     private static final int RESULT_BASE_HEIGHT = 345;
+    private static final float[][] INGREDIENT_POSITIONS = {
+            {0.50f, 0.18f},
+            {0.50f, 0.38f},
+            {0.50f, 0.58f},
+            {0.68f, 0.40f},
+            {0.18f, 0.66f},
+            {0.50f, 0.66f},
+            {0.82f, 0.66f}
+    };
 
     private final PotionMixerWindow window;
     private final Image backgroundImage;
@@ -135,8 +144,8 @@ public class MixingPanel extends JPanel {
 
         int mixWidth = Math.round(150 * scale);
         int mixHeight = Math.round(56 * scale);
-        int mixX = parchmentBounds.x + Math.round(parchmentBounds.width * 0.22f);
-        int mixY = parchmentBounds.y + parchmentBounds.height + Math.round(18 * scale);
+        int mixX = (getWidth() - mixWidth) / 2;
+        int mixY = getHeight() - mixHeight - Math.round(40 * scale);
         mixButton.setBounds(mixX, mixY, mixWidth, mixHeight);
         mixButton.setFont(AppFonts.alagard(34f * scale));
         backButton.setFont(AppFonts.alagard(34f * scale));
@@ -264,26 +273,9 @@ public class MixingPanel extends JPanel {
     private void drawIngredientIcons(Graphics2D g2) {
         ingredientHitboxes.clear();
 
-        int columns = 3;
-        int rows = 3;
-        int innerPaddingX = Math.round(parchmentBounds.width * 0.10f);
-        int innerPaddingTop = Math.round(parchmentBounds.height * 0.14f);
-        int innerPaddingBottom = Math.round(parchmentBounds.height * 0.10f);
-
-        int contentWidth = parchmentBounds.width - (innerPaddingX * 2);
-        int contentHeight = parchmentBounds.height - innerPaddingTop - innerPaddingBottom;
-        int cellWidth = contentWidth / columns;
-        int cellHeight = contentHeight / rows;
-
         for (int i = 0; i < ingredients.size(); i++) {
             Ingredient ingredient = ingredients.get(i);
-            int row = i / columns;
-            int column = i % columns;
-
-            int cellX = parchmentBounds.x + innerPaddingX + (column * cellWidth);
-            int cellY = parchmentBounds.y + innerPaddingTop + (row * cellHeight);
-
-            Rectangle drawBounds = createIconBounds(ingredient, cellX, cellY, cellWidth, cellHeight);
+            Rectangle drawBounds = createIngredientBounds(ingredient, i);
             ingredientHitboxes.add(drawBounds);
 
             Image image = getDisplayedIngredientIcon(ingredient).getImage();
@@ -291,19 +283,39 @@ public class MixingPanel extends JPanel {
         }
     }
 
-    private Rectangle createIconBounds(Ingredient ingredient, int cellX, int cellY, int cellWidth, int cellHeight) {
+    private Rectangle createIngredientBounds(Ingredient ingredient, int index) {
         ImageIcon imageIcon = getDisplayedIngredientIcon(ingredient);
         int iconWidth = imageIcon.getIconWidth();
         int iconHeight = imageIcon.getIconHeight();
 
-        float widthScale = cellWidth / (float) iconWidth;
-        float heightScale = cellHeight / (float) iconHeight;
-        float scale = Math.min(widthScale, heightScale) * 0.80f;
+        float[] position = INGREDIENT_POSITIONS[index];
+        int centerX = parchmentBounds.x + Math.round(parchmentBounds.width * position[0]);
+        int centerY = parchmentBounds.y + Math.round(parchmentBounds.height * position[1]);
+
+        float widthFactor;
+        float heightFactor;
+
+        if (ingredient.getName().equals("Eye")
+                || ingredient.getName().equals("Crystal")
+                || ingredient.getName().equals("Mushrooms")) {
+            widthFactor = 0.30f;
+            heightFactor = 0.20f;
+        } else {
+            widthFactor = 0.18f;
+            heightFactor = 0.12f;
+        }
+
+        int maxWidth = Math.round(parchmentBounds.width * widthFactor);
+        int maxHeight = Math.round(parchmentBounds.height * heightFactor);
+
+        float widthScale = maxWidth / (float) iconWidth;
+        float heightScale = maxHeight / (float) iconHeight;
+        float scale = Math.min(widthScale, heightScale);
 
         int drawWidth = Math.round(iconWidth * scale);
         int drawHeight = Math.round(iconHeight * scale);
-        int drawX = cellX + (cellWidth - drawWidth) / 2;
-        int drawY = cellY + (cellHeight - drawHeight) / 2;
+        int drawX = centerX - (drawWidth / 2);
+        int drawY = centerY - (drawHeight / 2);
 
         return new Rectangle(drawX, drawY, drawWidth, drawHeight);
     }
@@ -330,11 +342,11 @@ public class MixingPanel extends JPanel {
             return;
         }
 
-        int columns = 4;
-        int rows = 2;
-        int innerPaddingX = Math.round(shelfBounds.width * 0.08f);
-        int innerPaddingTop = Math.round(shelfBounds.height * 0.18f);
-        int innerPaddingBottom = Math.round(shelfBounds.height * 0.18f);
+        int columns = 7;
+        int rows = 3;
+        int innerPaddingX = Math.round(shelfBounds.width * 0.06f);
+        int innerPaddingTop = Math.round(shelfBounds.height * 0.11f);
+        int innerPaddingBottom = Math.round(shelfBounds.height * 0.12f);
 
         int contentWidth = shelfBounds.width - (innerPaddingX * 2);
         int contentHeight = shelfBounds.height - innerPaddingTop - innerPaddingBottom;
@@ -351,7 +363,7 @@ public class MixingPanel extends JPanel {
             int cellY = shelfBounds.y + innerPaddingTop + (row * cellHeight);
 
             Rectangle cellBounds = new Rectangle(cellX, cellY, cellWidth, cellHeight);
-            Rectangle drawBounds = fitIntoBounds(result.getIcon(), cellBounds, 0.70f);
+            Rectangle drawBounds = fitIntoBounds(result.getIcon(), cellBounds, 0.82f);
             g2.drawImage(result.getIcon().getImage(), drawBounds.x, drawBounds.y, drawBounds.width, drawBounds.height, this);
         }
     }
