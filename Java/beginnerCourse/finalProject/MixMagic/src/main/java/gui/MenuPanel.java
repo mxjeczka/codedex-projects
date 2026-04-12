@@ -8,9 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class MenuPanel extends JPanel {
-    private static final int BUTTON_WIDTH = 100;
-    private static final int BUTTON_HEIGHT = 45;
-    private static final int BOTTOM_MARGIN = 40;
+    private static final int BUTTON_WIDTH = 120;
+    private static final int BUTTON_HEIGHT = 60;
+    private static final int BOTTOM_MARGIN = 80;
 
     private final PotionMixerWindow window;
     private final Image backgroundImage;
@@ -22,7 +22,7 @@ public class MenuPanel extends JPanel {
 
         startButton = new JButton("Play");
         startButton.setBackground(Color.decode("#F8C8DC"));
-        startButton.setFont(AppFonts.alagard(28f));
+        startButton.setFont(AppFonts.alagard(40f));
         startButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         startButton.addActionListener(e -> this.window.switchToMixingPanel());
         add(startButton);

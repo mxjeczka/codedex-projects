@@ -8,8 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class MixingPanel extends JPanel {
-    private static final int BUTTON_WIDTH = 165;
-    private static final int BUTTON_HEIGHT = 45;
+    private static final int BUTTON_WIDTH = 120;
+    private static final int BUTTON_HEIGHT = 50;
     private static final int RIGHT_MARGIN = 40;
     private static final int BOTTOM_MARGIN = 40;
 
@@ -21,9 +21,9 @@ public class MixingPanel extends JPanel {
         this.window = window;
         setLayout(null);
 
-        backButton = new JButton("Back to Menu");
+        backButton = new JButton("Back");
         backButton.setBackground(Color.decode("#F8C8DC"));
-        backButton.setFont(AppFonts.alagard(20f));
+        backButton.setFont(AppFonts.alagard(38f));
         backButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         backButton.addActionListener(e -> this.window.switchToMenuPanel());
         add(backButton);
