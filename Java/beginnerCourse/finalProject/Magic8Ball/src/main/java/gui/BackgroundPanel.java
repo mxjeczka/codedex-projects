@@ -33,19 +33,22 @@ public class BackgroundPanel extends JPanel {
         contentPanel = new JPanel(new GridBagLayout());
         contentPanel.setOpaque(false);
 
-        titleLabel = new JLabel("Background Panel");
+        titleLabel = new JLabel("<html><center>Whisper<br>your question...<center></html>");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
 
         questionField = new JTextField();
-        askButton = new JButton("Ask again");
-        answerLabel = new JLabel(" ");
+        askButton = new JButton("Ask");
+        answerLabel = new JLabel("Your answer will appear here");
+        answerLabel.setForeground(Color.WHITE);
+        answerLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        contentPanel.add(titleLabel, gbc(0, 0));
-//        contentPanel.add(questionField);
-//        contentPanel.add(askButton);
-//        contentPanel.add(answerLabel);
-        add(contentPanel, containerGbc());
+        addRow(titleLabel, 0, 200, 20);
+        addRow(questionField, 1, 0, 16);
+        addRow(askButton, 2, 0, 16);
+        addRow(answerLabel, 3, 0, 0);
+
+        add(contentPanel, centeredConstraints());
 
         addComponentListener(new ComponentAdapter() {
             @Override
@@ -85,7 +88,7 @@ public class BackgroundPanel extends JPanel {
         g.drawImage(backgroundImage, x, y, drawWidth, drawHeight, this);
     }
 
-    private GridBagConstraints containerGbc() {
+    private GridBagConstraints centeredConstraints() {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -95,14 +98,19 @@ public class BackgroundPanel extends JPanel {
         return gbc;
     }
 
-    private GridBagConstraints gbc(int x, int y) {
+    private void addRow(JComponent component, int row, int top, int bottom) {
+        contentPanel.add(component, rowConstraints(row, top, bottom));
+    }
+
+    private GridBagConstraints rowConstraints(int row, int top, int bottom) {
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = x;
-        gbc.gridy = y;
+        gbc.gridx = 0;
+        gbc.gridy = row;
         gbc.weightx = 1;
         gbc.weighty = 0;
-        gbc.fill = GridBagConstraints.NONE;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.CENTER;
+        gbc.insets = new Insets(top, 0, bottom, 0);
         return gbc;
     }
 
@@ -111,8 +119,19 @@ public class BackgroundPanel extends JPanel {
         int panelHeight = Math.max(getHeight(), 600);
         int smallerSide = Math.min(panelWidth, panelHeight);
 
-        float titleSize = Math.max(28f, smallerSide / 10f);
+        float titleSize = Math.max(20f, smallerSide / 10f);
+        float fieldSize = Math.max(18f, smallerSide / 28f);
+        float buttonSize = Math.max(18f, smallerSide / 30f);
+        float answerSize = Math.max(20f, smallerSide / 24f);
+
         titleLabel.setFont(FontLoader.getFont(titleSize));
+        questionField.setFont(FontLoader.getFont(fieldSize));
+        askButton.setFont(FontLoader.getFont(buttonSize));
+        answerLabel.setFont(FontLoader.getFont(answerSize));
+
+        int contentWidth = Math.max(320, panelWidth / 3);
+        questionField.setPreferredSize(new Dimension(contentWidth, Math.max(40, panelHeight / 18)));
+        askButton.setPreferredSize(new Dimension(Math.max(180, panelWidth / 8), Math.max(42, panelHeight / 17)));
 
         int topPadding = Math.max(30, panelHeight / 12);
         int sidePadding = Math.max(20, panelWidth / 16);
