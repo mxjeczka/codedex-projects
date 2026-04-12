@@ -1,17 +1,16 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Magic8BallFrame extends JFrame {
 
     public Magic8BallFrame() {
         setTitle("Magic 8 Ball of Destiny");
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setSize(1536, 1024);
-        setResizable(false);
-        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(new BackgroundPanel());
+        setMinimumSize(new Dimension(900, 600));
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
     }
 }
