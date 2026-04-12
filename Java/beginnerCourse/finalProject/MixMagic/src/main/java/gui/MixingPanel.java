@@ -29,14 +29,18 @@ public class MixingPanel extends JPanel {
     private static final int RIGHT_MARGIN = 40;
     private static final int BOTTOM_MARGIN = 40;
     private static final int MAX_SELECTED_INGREDIENTS = 2;
+
     private static final int BASE_SCREEN_WIDTH = 1920;
     private static final int BASE_SCREEN_HEIGHT = 1080;
+
     private static final int SHELF_BASE_X = 58;
-    private static final int SHELF_BASE_Y = 680;
+    private static final int SHELF_BASE_Y = 650;
     private static final int SHELF_BASE_WIDTH = 595;
+
     private static final int PARCHMENT_BASE_X = 10;
-    private static final int PARCHMENT_BASE_Y = 216;
-    private static final int PARCHMENT_BASE_HEIGHT = 702;
+    private static final int PARCHMENT_BASE_Y = 50;
+    private static final int PARCHMENT_BASE_HEIGHT = 750;
+
     private static final int RESULT_BASE_X = 830;
     private static final int RESULT_BASE_Y = 302;
     private static final int RESULT_BASE_WIDTH = 345;
