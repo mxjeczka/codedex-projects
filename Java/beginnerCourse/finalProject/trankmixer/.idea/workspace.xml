@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5097ba87-5edc-4c41-b22a-8a820b23e8f5" name="Changes" comment="kleine Änderungen">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/subprojects.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trankmixer-1217514472/project-info.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trankmixer-1648780549/project-info.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trankmixer-525782880/project-info.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trust/2EE5987CDF18FA5DCB54C4D7241435C361BA8A10A5BDA4CDC595CB2EFAA13D36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trust/657979BECCA7F23C9138924F38F0AE20210EE897A5FE82B52324CB91B766276F" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trust/A5BE438766E1859E42AFB02AAAA5C593FCA6D56C2481287EC2E4229B0594FB70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/nb-cache/trust/D5DB07C020B598516909B21915E8CF38C12909AB17C2BB428053B81BD2C2570A" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/MainMenuPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/MainMenuPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/MixingPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/MixingPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/MixingPanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/MixingPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/PotionMixerWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/logic/PotionCombiner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/logic/PotionDescriptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/util/ImageLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/util/TextDrawer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/logic/MusicPlayerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/logic/PotionCombinerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/logic/PotionDescriptionsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/logic.PotionCombinerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/logic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/fonts/alagard.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/alchemyLabor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/happy_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/huette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/neutral_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/pergament.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/pixelBackButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/pixelMixButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/pixelPlayButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/shelf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/shocked_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/sound_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/sound_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/speachBubble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/talking_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Aqua Dragon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Ashcap Beast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Cloud Serpent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Dust Collossus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Flame Shard Golem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Fungus Ent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Gale Prism.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Geo-Shard Beast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Golem's Eye Totem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Lava Monster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Mossbeast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/MushKelp Serpent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Oracle Eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Phoenix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Rootcore Crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Sea-Sight Jellyfish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Spore Spirit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Steam Spirit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/Swirl of Embers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/WeakerDreams.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/WindButterfly.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/moonElf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/stormSalamander.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/umbraWraith.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/results/vineMonster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/Crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/Crystal_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/Eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/Eye_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/Mushrooms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/Mushrooms_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/air.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/air_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/earth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/earth_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/fire_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/zutaten/water_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-logic.PotionCombinerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MainMenuPanel$1.class.uniqueId8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MainMenuPanel.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MixingPanel$1.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MixingPanel$2.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MixingPanel$3.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MixingPanel.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MusicPlayer.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PotionMixerWindow.class.uniqueId7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/MusicPlayerTest.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainMenuPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MixingPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PotionMixerWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/PotionCombiner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/PotionDescriptions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ImageLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/TextDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fonts/alagard.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/alchemyLabor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/happy_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/huette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/neutral_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pergament.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pixelBackButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pixelMixButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pixelPlayButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/shelf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/shocked_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/sound_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/sound_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/speachBubble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/talking_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Aqua Dragon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Ashcap Beast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Cloud Serpent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Dust Collossus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Flame Shard Golem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Fungus Ent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Gale Prism.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Geo-Shard Beast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Golem's Eye Totem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Lava Monster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Mossbeast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/MushKelp Serpent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Oracle Eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Phoenix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Rootcore Crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Sea-Sight Jellyfish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Spore Spirit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Steam Spirit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/Swirl of Embers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/WeakerDreams.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/WindButterfly.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/moonElf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/stormSalamander.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/umbraWraith.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/results/vineMonster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/Crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/Crystal_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/Eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/Eye_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/Mushrooms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/Mushrooms_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/air.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/air_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/earth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/earth_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/fire_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/zutaten/water_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/logic/MusicPlayerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/logic/PotionCombinerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/logic/PotionDescriptionsTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="77" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mxjeczka&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mxjeczka/codedex-projects.git&quot;,
+    &quot;accountId&quot;: &quot;8f85810e-9d21-4398-a221-13d1c48c2857&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3CDYOvghg2ZYvZBVQIm0bx3cmMX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.trankmixer [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Codedex/codedex-projects/Java/beginnerCourse/finalProject/trankmixer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5097ba87-5edc-4c41-b22a-8a820b23e8f5" name="Changes" comment="" />
+      <created>1775921578216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775921578216</updated>
+    </task>
+    <task id="LOCAL-00001" summary="kleine Änderungen">
+      <option name="closed" value="true" />
+      <created>1775925994727</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1775925994727</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="kleine Änderungen" />
+    <option name="LAST_COMMIT_MESSAGE" value="kleine Änderungen" />
+  </component>
+</project>
