@@ -26,19 +26,19 @@ public class PotionMixerWindow extends JFrame {
 
         setContentPane(menuPanel);
 
-        addWindowStateListener(e -> {
-            int newState = e.getNewState();
-            boolean minimized = (newState & JFrame.ICONIFIED) == JFrame.ICONIFIED;
-            boolean maximized = (newState & JFrame.MAXIMIZED_BOTH) == JFrame.MAXIMIZED_BOTH;
-
-            if (!minimized && !maximized) {
-                SwingUtilities.invokeLater(() -> {
-                    setState(JFrame.NORMAL);
-                    setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    toFront();
-                });
-            }
-        });
+//        addWindowStateListener(e -> {
+//            int newState = e.getNewState();
+//            boolean minimized = (newState & JFrame.ICONIFIED) == JFrame.ICONIFIED;
+//            boolean maximized = (newState & JFrame.MAXIMIZED_BOTH) == JFrame.MAXIMIZED_BOTH;
+//
+//            if (!minimized && !maximized) {
+//                SwingUtilities.invokeLater(() -> {
+//                    setState(JFrame.NORMAL);
+//                    setExtendedState(JFrame.MAXIMIZED_BOTH);
+//                    toFront();
+//                });
+//            }
+//        });
 
         setExtendedState(MAXIMIZED_BOTH);
         setVisible(true);

@@ -1,8 +1,6 @@
 package gui;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
@@ -10,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class MenuPanel extends JPanel {
-    private static final int BUTTON_WIDTH = 80;
+    private static final int BUTTON_WIDTH = 100;
     private static final int BUTTON_HEIGHT = 45;
     private static final int BOTTOM_MARGIN = 40;
 
@@ -23,6 +21,8 @@ public class MenuPanel extends JPanel {
         setLayout(null);
 
         startButton = new JButton("Play");
+        startButton.setBackground(Color.decode("#F8C8DC"));
+        startButton.setFont(AppFonts.alagard(28f));
         startButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         startButton.addActionListener(e -> this.window.switchToMixingPanel());
         add(startButton);

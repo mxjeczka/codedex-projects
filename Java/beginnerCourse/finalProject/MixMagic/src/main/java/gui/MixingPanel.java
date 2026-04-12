@@ -1,8 +1,6 @@
 package gui;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
@@ -10,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class MixingPanel extends JPanel {
-    private static final int BUTTON_WIDTH = 150;
+    private static final int BUTTON_WIDTH = 165;
     private static final int BUTTON_HEIGHT = 45;
     private static final int RIGHT_MARGIN = 40;
     private static final int BOTTOM_MARGIN = 40;
@@ -24,6 +22,8 @@ public class MixingPanel extends JPanel {
         setLayout(null);
 
         backButton = new JButton("Back to Menu");
+        backButton.setBackground(Color.decode("#F8C8DC"));
+        backButton.setFont(AppFonts.alagard(20f));
         backButton.setSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         backButton.addActionListener(e -> this.window.switchToMenuPanel());
         add(backButton);
