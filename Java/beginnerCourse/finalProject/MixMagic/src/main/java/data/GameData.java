@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import model.Ingredient;
 import model.PotionResult;
-import model.Recipe;
 import util.ImageLoader;
 
 public final class GameData {
@@ -58,15 +57,15 @@ public final class GameData {
         Map<String, PotionResult> recipes = new HashMap<>();
 
         recipes.put(createRecipeKey("Eye", "Crystal"), results.get("Oracle Eye"));
-        recipes.put(createRecipeKey("Eye", "Mushrooms"), results.get("WeakerDreams"));
+        recipes.put(createRecipeKey("Eye", "Mushrooms"), results.get("Weaker Dreams"));
         recipes.put(createRecipeKey("Eye", "Water"), results.get("Sea-Sight Jellyfish"));
         recipes.put(createRecipeKey("Eye", "Fire"), results.get("Phoenix"));
         recipes.put(createRecipeKey("Eye", "Air"), results.get("Wind Butterfly"));
         recipes.put(createRecipeKey("Eye", "Earth"), results.get("Golem's Eye Totem"));
 
-        recipes.put(createRecipeKey("Crystal", "Mushrooms"), results.get("Root Core Crystal"));
+        recipes.put(createRecipeKey("Crystal", "Mushrooms"), results.get("Rootcore Crystal"));
         recipes.put(createRecipeKey("Crystal", "Water"), results.get("Aqua Dragon"));
-        recipes.put(createRecipeKey("Crystal", "Fire"), results.get("Flame Shared Golem"));
+        recipes.put(createRecipeKey("Crystal", "Fire"), results.get("Flame Shard Golem"));
         recipes.put(createRecipeKey("Crystal", "Air"), results.get("Gale Prism"));
         recipes.put(createRecipeKey("Crystal", "Earth"), results.get("Geo-Shard Beast"));
 
