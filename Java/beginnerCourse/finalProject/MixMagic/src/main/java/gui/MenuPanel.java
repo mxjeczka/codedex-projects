@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class MenuPanel extends JPanel {
     private static final int BUTTON_WIDTH = 120;
     private static final int BUTTON_HEIGHT = 60;
-    private static final int BOTTOM_MARGIN = 80;
+    private static final int BOTTOM_MARGIN = 60;
     private static final String TITLE_TEXT = "AlchemyLab";
     private static final String AUTHOR_TEXT = "By Maja";
 
