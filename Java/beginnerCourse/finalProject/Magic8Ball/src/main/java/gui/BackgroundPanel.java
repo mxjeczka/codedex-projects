@@ -10,7 +10,6 @@ import java.net.URL;
 
 public class BackgroundPanel extends JPanel {
     private final Image backgroundImage;
-    private final JPanel contentPanel;
 
     private final JLabel titleLabel;
     private final JTextField questionField;
@@ -28,27 +27,30 @@ public class BackgroundPanel extends JPanel {
 
         backgroundImage = new ImageIcon(imageUrl).getImage();
 
-        setLayout(new GridBagLayout());
-
-        contentPanel = new JPanel(new GridBagLayout());
-        contentPanel.setOpaque(false);
+        setLayout(null);
 
         titleLabel = new JLabel("<html><center>Whisper<br>your question...<center></html>");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
 
         questionField = new JTextField();
+        questionField.setBackground(new Color(0x8b6eca));
+        questionField.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        questionField.setForeground(Color.WHITE);
+
         askButton = new JButton("Ask");
+        askButton.setBackground(new Color(0x200076));
+        askButton.setForeground(Color.WHITE);
+        askButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+
         answerLabel = new JLabel("Your answer will appear here");
         answerLabel.setForeground(Color.WHITE);
         answerLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        addRow(titleLabel, 0, 200, 20);
-        addRow(questionField, 1, 0, 16);
-        addRow(askButton, 2, 0, 16);
-        addRow(answerLabel, 3, 0, 0);
-
-        add(contentPanel, centeredConstraints());
+        add(titleLabel);
+        add(questionField);
+        add(askButton);
+        add(answerLabel);
 
         addComponentListener(new ComponentAdapter() {
             @Override
@@ -88,32 +90,6 @@ public class BackgroundPanel extends JPanel {
         g.drawImage(backgroundImage, x, y, drawWidth, drawHeight, this);
     }
 
-    private GridBagConstraints centeredConstraints() {
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.weightx = 1;
-        gbc.weighty = 1;
-        gbc.anchor = GridBagConstraints.NORTH;
-        return gbc;
-    }
-
-    private void addRow(JComponent component, int row, int top, int bottom) {
-        contentPanel.add(component, rowConstraints(row, top, bottom));
-    }
-
-    private GridBagConstraints rowConstraints(int row, int top, int bottom) {
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = row;
-        gbc.weightx = 1;
-        gbc.weighty = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.CENTER;
-        gbc.insets = new Insets(top, 0, bottom, 0);
-        return gbc;
-    }
-
     private void updateResponsiveStyles() {
         int panelWidth = Math.max(getWidth(), 800);
         int panelHeight = Math.max(getHeight(), 600);
@@ -129,15 +105,50 @@ public class BackgroundPanel extends JPanel {
         askButton.setFont(FontLoader.getFont(buttonSize));
         answerLabel.setFont(FontLoader.getFont(answerSize));
 
-        int contentWidth = Math.max(320, panelWidth / 3);
-        questionField.setPreferredSize(new Dimension(contentWidth, Math.max(40, panelHeight / 18)));
-        askButton.setPreferredSize(new Dimension(Math.max(180, panelWidth / 8), Math.max(42, panelHeight / 17)));
+        titleLabel.setBounds(
+                scaledX(panelWidth, 0.35),
+                scaledY(panelHeight, 0.28),
+                scaledWidth(panelWidth, 0.64),
+                scaledHeight(panelHeight, 0.28)
+        );
 
-        int topPadding = Math.max(30, panelHeight / 12);
-        int sidePadding = Math.max(20, panelWidth / 16);
-        contentPanel.setBorder(BorderFactory.createEmptyBorder(topPadding, sidePadding, 0, sidePadding));
+        questionField.setBounds(
+                scaledX(panelWidth, 0.545),
+                scaledY(panelHeight, 0.58),
+                scaledWidth(panelWidth, 0.23),
+                Math.max(40, scaledHeight(panelHeight, 0.055))
+        );
 
-        revalidate();
+        askButton.setBounds(
+                scaledX(panelWidth, 0.60),
+                scaledY(panelHeight, 0.72),
+                scaledWidth(panelWidth, 0.12),
+                Math.max(42, scaledHeight(panelHeight, 0.06))
+        );
+
+        answerLabel.setBounds(
+                scaledX(panelWidth, 0.18),
+                scaledY(panelHeight, 0.56),
+                scaledWidth(panelWidth, 0.64),
+                scaledHeight(panelHeight, 0.10)
+        );
+
         repaint();
+    }
+
+    private int scaledX(int width, double percent) {
+        return (int) Math.round(width * percent);
+    }
+
+    private int scaledY(int height, double percent) {
+        return (int) Math.round(height * percent);
+    }
+
+    private int scaledWidth(int width, double percent) {
+        return (int) Math.round(width * percent);
+    }
+
+    private int scaledHeight(int height, double percent) {
+        return (int) Math.round(height * percent);
     }
 }
