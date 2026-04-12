@@ -31,6 +31,16 @@ public class MixingPanel extends JPanel {
     private static final int MAX_SELECTED_INGREDIENTS = 2;
     private static final int BASE_SCREEN_WIDTH = 1920;
     private static final int BASE_SCREEN_HEIGHT = 1080;
+    private static final int SHELF_BASE_X = 58;
+    private static final int SHELF_BASE_Y = 680;
+    private static final int SHELF_BASE_WIDTH = 595;
+    private static final int PARCHMENT_BASE_X = 10;
+    private static final int PARCHMENT_BASE_Y = 216;
+    private static final int PARCHMENT_BASE_HEIGHT = 702;
+    private static final int RESULT_BASE_X = 830;
+    private static final int RESULT_BASE_Y = 302;
+    private static final int RESULT_BASE_WIDTH = 345;
+    private static final int RESULT_BASE_HEIGHT = 345;
 
     private final PotionMixerWindow window;
     private final Image backgroundImage;
@@ -109,6 +119,7 @@ public class MixingPanel extends JPanel {
         super.doLayout();
 
         float scale = getScaleFactor();
+        updateScaledBounds();
         int backWidth = Math.round(BUTTON_WIDTH * scale);
         int backHeight = Math.round(BUTTON_HEIGHT * scale);
         int rightMargin = Math.round(RIGHT_MARGIN * scale);
@@ -124,7 +135,7 @@ public class MixingPanel extends JPanel {
         int mixY = parchmentBounds.y + parchmentBounds.height + Math.round(18 * scale);
         mixButton.setBounds(mixX, mixY, mixWidth, mixHeight);
         mixButton.setFont(AppFonts.alagard(34f * scale));
-        backButton.setFont(AppFonts.alagard(38f * scale));
+        backButton.setFont(AppFonts.alagard(34f * scale));
     }
 
     private JButton createButton(String text, float fontSize) {
@@ -182,23 +193,68 @@ public class MixingPanel extends JPanel {
     }
 
     private void updateScaledBounds() {
-        shelfBounds = createRelativeBounds(0.03f, 0.63f, 0.31f, 0.29f);
-        parchmentBounds = createRelativeBounds(0.04f, 0.20f, 0.25f, 0.37f);
-        resultBounds = createRelativeBounds(0.43f, 0.28f, 0.18f, 0.32f);
+        float scale = getScaleFactor();
+
+        shelfBounds = createScaledBoundsFromWidth(
+                SHELF_BASE_X,
+                SHELF_BASE_Y,
+                SHELF_BASE_WIDTH,
+                shelfImage,
+                scale
+        );
+        parchmentBounds = createScaledBoundsFromHeight(
+                PARCHMENT_BASE_X,
+                PARCHMENT_BASE_Y,
+                PARCHMENT_BASE_HEIGHT,
+                pergamentImage,
+                scale
+        );
+        resultBounds = createScaledBounds(
+                RESULT_BASE_X,
+                RESULT_BASE_Y,
+                RESULT_BASE_WIDTH,
+                RESULT_BASE_HEIGHT,
+                scale
+        );
     }
 
-    private Rectangle createRelativeBounds(float xRatio, float yRatio, float widthRatio, float heightRatio) {
+    private Rectangle createScaledBounds(int x, int y, int width, int height, float scale) {
         return new Rectangle(
-                Math.round(getWidth() * xRatio),
-                Math.round(getHeight() * yRatio),
-                Math.round(getWidth() * widthRatio),
-                Math.round(getHeight() * heightRatio)
+                Math.round(x * scale),
+                Math.round(y * scale),
+                Math.round(width * scale),
+                Math.round(height * scale)
+        );
+    }
+
+    private Rectangle createScaledBoundsFromWidth(int x, int y, int width, Image image, float scale) {
+        int scaledWidth = Math.round(width * scale);
+        int scaledHeight = Math.round((scaledWidth / (float) image.getWidth(this)) * image.getHeight(this));
+        return new Rectangle(
+                Math.round(x * scale),
+                Math.round(y * scale),
+                scaledWidth,
+                scaledHeight
+        );
+    }
+
+    private Rectangle createScaledBoundsFromHeight(int x, int y, int height, Image image, float scale) {
+        int scaledHeight = Math.round(height * scale);
+        int scaledWidth = Math.round((scaledHeight / (float) image.getHeight(this)) * image.getWidth(this));
+        return new Rectangle(
+                Math.round(x * scale),
+                Math.round(y * scale),
+                scaledWidth,
+                scaledHeight
         );
     }
 
     private void drawEnvironment(Graphics2D g2) {
+        Object previousInterpolation = g2.getRenderingHint(RenderingHints.KEY_INTERPOLATION);
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
         g2.drawImage(pergamentImage, parchmentBounds.x, parchmentBounds.y, parchmentBounds.width, parchmentBounds.height, this);
         g2.drawImage(shelfImage, shelfBounds.x, shelfBounds.y, shelfBounds.width, shelfBounds.height, this);
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, previousInterpolation);
     }
 
     private void drawIngredientIcons(Graphics2D g2) {
