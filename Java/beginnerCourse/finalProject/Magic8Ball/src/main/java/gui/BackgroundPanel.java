@@ -43,7 +43,7 @@ public class BackgroundPanel extends JPanel {
         askButton.setForeground(Color.WHITE);
         askButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
-        answerLabel = new JLabel("Your answer will appear here");
+        answerLabel = new JLabel("Definitely");
         answerLabel.setForeground(Color.WHITE);
         answerLabel.setHorizontalAlignment(JLabel.CENTER);
 
@@ -66,13 +66,80 @@ public class BackgroundPanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        Rectangle imageBounds = getImageDrawBounds();
+        if (imageBounds == null) {
+            return;
+        }
+
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, getWidth(), getHeight());
+        g.drawImage(
+                backgroundImage,
+                imageBounds.x,
+                imageBounds.y,
+                imageBounds.width,
+                imageBounds.height,
+                this
+        );
+    }
+
+    private void updateResponsiveStyles() {
+        Rectangle imageBounds = getImageDrawBounds();
+        if (imageBounds == null) {
+            return;
+        }
+
+        int smallerSide = Math.min(imageBounds.width, imageBounds.height);
+
+        float titleSize = Math.max(20f, smallerSide / 10f);
+        float fieldSize = Math.max(18f, smallerSide / 28f);
+        float buttonSize = Math.max(18f, smallerSide / 30f);
+        float answerSize = Math.max(20f, smallerSide / 12f);
+
+        titleLabel.setFont(FontLoader.getFont(titleSize));
+        questionField.setFont(FontLoader.getFont(fieldSize));
+        askButton.setFont(FontLoader.getFont(buttonSize));
+        answerLabel.setFont(FontLoader.getFont(answerSize));
+
+        titleLabel.setBounds(
+                scaledX(imageBounds, 0.385),
+                scaledY(imageBounds, 0.28),
+                scaledWidth(imageBounds, 0.64),
+                scaledHeight(imageBounds, 0.28)
+        );
+
+        questionField.setBounds(
+                scaledX(imageBounds, 0.555),
+                scaledY(imageBounds, 0.58),
+                scaledWidth(imageBounds, 0.295),
+                Math.max(40, scaledHeight(imageBounds, 0.055))
+        );
+
+        askButton.setBounds(
+                scaledX(imageBounds, 0.64),
+                scaledY(imageBounds, 0.72),
+                scaledWidth(imageBounds, 0.12),
+                Math.max(42, scaledHeight(imageBounds, 0.06))
+        );
+
+        answerLabel.setBounds(
+                scaledX(imageBounds, -0.05),
+                scaledY(imageBounds, 0.45),
+                scaledWidth(imageBounds, 0.64),
+                scaledHeight(imageBounds, 0.10)
+        );
+
+        repaint();
+    }
+
+    private Rectangle getImageDrawBounds() {
         int panelWidth = getWidth();
         int panelHeight = getHeight();
         int imageWidth = backgroundImage.getWidth(this);
         int imageHeight = backgroundImage.getHeight(this);
 
-        if (imageWidth <= 0 || imageHeight <= 0) {
-            return;
+        if (panelWidth <= 0 || panelHeight <= 0 || imageWidth <= 0 || imageHeight <= 0) {
+            return null;
         }
 
         double scale = Math.min(
@@ -85,70 +152,22 @@ public class BackgroundPanel extends JPanel {
         int x = (panelWidth - drawWidth) / 2;
         int y = (panelHeight - drawHeight) / 2;
 
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, panelWidth, panelHeight);
-        g.drawImage(backgroundImage, x, y, drawWidth, drawHeight, this);
+        return new Rectangle(x, y, drawWidth, drawHeight);
     }
 
-    private void updateResponsiveStyles() {
-        int panelWidth = Math.max(getWidth(), 800);
-        int panelHeight = Math.max(getHeight(), 600);
-        int smallerSide = Math.min(panelWidth, panelHeight);
-
-        float titleSize = Math.max(20f, smallerSide / 10f);
-        float fieldSize = Math.max(18f, smallerSide / 28f);
-        float buttonSize = Math.max(18f, smallerSide / 30f);
-        float answerSize = Math.max(20f, smallerSide / 24f);
-
-        titleLabel.setFont(FontLoader.getFont(titleSize));
-        questionField.setFont(FontLoader.getFont(fieldSize));
-        askButton.setFont(FontLoader.getFont(buttonSize));
-        answerLabel.setFont(FontLoader.getFont(answerSize));
-
-        titleLabel.setBounds(
-                scaledX(panelWidth, 0.35),
-                scaledY(panelHeight, 0.28),
-                scaledWidth(panelWidth, 0.64),
-                scaledHeight(panelHeight, 0.28)
-        );
-
-        questionField.setBounds(
-                scaledX(panelWidth, 0.545),
-                scaledY(panelHeight, 0.58),
-                scaledWidth(panelWidth, 0.23),
-                Math.max(40, scaledHeight(panelHeight, 0.055))
-        );
-
-        askButton.setBounds(
-                scaledX(panelWidth, 0.60),
-                scaledY(panelHeight, 0.72),
-                scaledWidth(panelWidth, 0.12),
-                Math.max(42, scaledHeight(panelHeight, 0.06))
-        );
-
-        answerLabel.setBounds(
-                scaledX(panelWidth, 0.18),
-                scaledY(panelHeight, 0.56),
-                scaledWidth(panelWidth, 0.64),
-                scaledHeight(panelHeight, 0.10)
-        );
-
-        repaint();
+    private int scaledX(Rectangle bounds, double percent) {
+        return bounds.x + (int) Math.round(bounds.width * percent);
     }
 
-    private int scaledX(int width, double percent) {
-        return (int) Math.round(width * percent);
+    private int scaledY(Rectangle bounds, double percent) {
+        return bounds.y + (int) Math.round(bounds.height * percent);
     }
 
-    private int scaledY(int height, double percent) {
-        return (int) Math.round(height * percent);
+    private int scaledWidth(Rectangle bounds, double percent) {
+        return (int) Math.round(bounds.width * percent);
     }
 
-    private int scaledWidth(int width, double percent) {
-        return (int) Math.round(width * percent);
-    }
-
-    private int scaledHeight(int height, double percent) {
-        return (int) Math.round(height * percent);
+    private int scaledHeight(Rectangle bounds, double percent) {
+        return (int) Math.round(bounds.height * percent);
     }
 }
