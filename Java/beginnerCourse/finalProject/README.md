@@ -86,7 +86,7 @@ Each answer is randomly selected to create an unpredictable experience.
 
 ## Notes
 
-This project demonstrates how Java Swing can be used to build interactive and visually appealing desktop applications.
+This project  is part of my Java learning journey on Codedex and demonstrates how Java Swing can be used to build interactive and visually appealing desktop applications.
 
 It combines logic, design, and user interaction into a small but polished application.
 
