@@ -17,11 +17,7 @@ The content is organized into subfolders and files:
 
 ## How to Run
 
-Run Python files using:
-
-```bash
-python filename.py
-```
+Open the project in your IDE and run it directly.
 
 Make sure Python is installed on your system.
 
