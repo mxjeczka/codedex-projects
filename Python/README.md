@@ -4,7 +4,7 @@ This folder contains all my Python exercises and projects completed as part of m
 
 It includes beginner-level tasks as well as more structured exercises to build a strong foundation in Python programming.
 
-## 📂 Structure
+## Structure
 
 The content is organized into subfolders and files:
 
