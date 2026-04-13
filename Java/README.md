@@ -13,23 +13,19 @@ The content is organized into subfolders:
 
 ## Topics Covered
 
-* Variables and data types
 * Conditional statements (if/else)
 * Loops (for, while)
 * User input with Scanner
 * Basic program structure
-* Introduction to problem-solving in Java
+* Working with logic and state in small applications
+* Building console-based applications
+* Introduction to graphical user interfaces with Java Swing
+* Handling user interactions and events (buttons, input fields)
+* Structuring small projects into organized folders
 
 ## How to Run
 
-Compile and run Java files using:
-
-```bash
-javac FileName.java
-java FileName
-```
-
-Or open the project in IntelliJ IDEA/ Visual Studio Code and run it directly.
+Open the project in your IDE and run it directly.
 
 ## Notes
 
