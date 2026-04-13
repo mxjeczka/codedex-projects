@@ -51,7 +51,7 @@ public class BackgroundPanel extends JPanel {
         // Tells the panel to use no layout manager.
         setLayout(null);
 
-        titleLabel = new JLabel("<html><center>Whisper<br>your question...<center></html>");
+        titleLabel = new JLabel("<html><center>Whisper<br>your question...</center></html>");
         titleLabel.setForeground(Color.WHITE);
         // Centers the title text inside the label.
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -266,7 +266,7 @@ public class BackgroundPanel extends JPanel {
      *
      * @param bounds is the image area.
      * @param percent is the height as a percent value.
-     * @return eturns the real height.
+     * @return returns the real height.
      */
     private int scaledHeight(Rectangle bounds, double percent) {
         // Returns the height inside the image area.
@@ -349,7 +349,7 @@ public class BackgroundPanel extends JPanel {
             answerTimer.stop();
         }
 
-        // Creates a timer that clears the answer after five seconds.
+        // Creates a timer that clears the answer after three seconds.
         answerTimer = new Timer(3000, e -> clearAnswer());
         // Makes sure the timer only runs one time.
         answerTimer.setRepeats(false);
