@@ -4,7 +4,7 @@ This folder contains all my Java exercises and projects completed as part of my 
 
 It includes beginner-level tasks as well as more structured projects that help build a solid foundation in Java programming.
 
-## 📂 Structure
+## Structure
 
 The content is organized into subfolders:
 
