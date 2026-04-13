@@ -4,7 +4,7 @@ This folder contains my work from the Codedex Java Beginner Course.
 
 It includes both smaller exercises and larger projects designed to reinforce core Java concepts.
 
-## 📂 Contents
+## Contents
 
 ### 🐉 Dragon Pet Simulator (Checkpoint Project)
 
@@ -17,24 +17,36 @@ Features:
 * Dynamic stat system (Hunger, Energy, Firepower)
 * ASCII art and simple game loop
 
-➡️ See the project folder for more details and a dedicated README.
+=> See the project folder for more details and a dedicated README.
 
 ---
 
-### 🚧 Final Project (Coming Soon)
+### 🔮 Magic 8 Ball (Final Project)
 
-This section will include my final project from the Java beginner course.
+A graphical Magic 8 Ball application where users can ask questions and receive randomly generated mystical answers from an oracle.
 
-Details and implementation will be added once the project is completed.
+Features:
+
+* Java Swing graphical interface
+* Custom background and font styling
+* Randomized answer system (positive, negative, unclear)
+* Dynamic and interactive UI behavior
+* Temporary answer display with automatic fade-out
+
+=> See the project folder for more details and a dedicated README.
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
-* Applying Java basics in real scenarios
-* Building interactive console applications
-* Structuring small projects
-* Working with logic, loops, and user input
+* Using core Java concepts in real projects
+* Building interactive console applications with loops, conditions, and Scanner input
+* Managing program logic and simple state systems
+* Structuring small projects in a clear and organized way
+* Building graphical user interfaces with Java Swing
+* Handling user interactions (buttons, input fields, events)
+* Working with randomness and dynamic application behavior
+* Separating logic and UI (console vs GUI design)
 
 ## Notes
 
