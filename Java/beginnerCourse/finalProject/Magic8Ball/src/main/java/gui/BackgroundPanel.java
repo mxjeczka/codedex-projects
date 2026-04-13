@@ -1,12 +1,17 @@
 package gui;
 
+import logic.Magic8BallService;
 import util.FontLoader;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.net.URL;
+
+import javax.swing.Timer;
 
 public class BackgroundPanel extends JPanel {
     private final Image backgroundImage;
@@ -16,7 +21,9 @@ public class BackgroundPanel extends JPanel {
     private final JButton askButton;
     private final JLabel answerLabel;
 
-    private final String[] answers = {"Yes", "No", "Ask again later", "Definitely"};
+    private final Magic8BallService magic8BallService;
+    private Timer answerTimer;
+
 
     public BackgroundPanel() {
         URL imageUrl = getClass().getResource("/images/background.jpg");
@@ -43,7 +50,9 @@ public class BackgroundPanel extends JPanel {
         askButton.setForeground(Color.WHITE);
         askButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
-        answerLabel = new JLabel("Definitely");
+        magic8BallService = new Magic8BallService();
+        answerLabel = new JLabel("");
+        registerListeners();
         answerLabel.setForeground(Color.WHITE);
         answerLabel.setHorizontalAlignment(JLabel.CENTER);
 
@@ -94,7 +103,7 @@ public class BackgroundPanel extends JPanel {
         float titleSize = Math.max(20f, smallerSide / 10f);
         float fieldSize = Math.max(18f, smallerSide / 28f);
         float buttonSize = Math.max(18f, smallerSide / 30f);
-        float answerSize = Math.max(20f, smallerSide / 12f);
+        float answerSize = Math.max(20f, smallerSide / 18f);
 
         titleLabel.setFont(FontLoader.getFont(titleSize));
         questionField.setFont(FontLoader.getFont(fieldSize));
@@ -169,5 +178,56 @@ public class BackgroundPanel extends JPanel {
 
     private int scaledHeight(Rectangle bounds, double percent) {
         return (int) Math.round(bounds.height * percent);
+    }
+
+    private void registerListeners() {
+        askButton.addActionListener(e -> handleAskButton());
+
+        questionField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                resetQuestionInput();
+            }
+        });
+    }
+
+    private void resetQuestionInput() {
+        if (answerTimer != null && answerTimer.isRunning()) {
+            answerTimer.stop();
+        }
+
+        clearAnswer();
+        questionField.setText("");
+    }
+
+    private void handleAskButton() {
+        String question = questionField.getText().trim();
+
+        if (question.isEmpty()) {
+            clearAnswer();
+            return;
+        }
+
+        String answer = magic8BallService.getRandomAnswer();
+        showAnswer(answer);
+        startAnswerTimer();
+    }
+
+    private void showAnswer(String answer) {
+        answerLabel.setText(answer);
+    }
+
+    private void clearAnswer() {
+        answerLabel.setText("");
+    }
+
+    private void startAnswerTimer() {
+        if (answerTimer != null && answerTimer.isRunning()) {
+            answerTimer.stop();
+        }
+
+        answerTimer = new Timer(3000, e -> clearAnswer());
+        answerTimer.setRepeats(false);
+        answerTimer.start();
     }
 }
