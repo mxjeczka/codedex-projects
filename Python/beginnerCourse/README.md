@@ -22,11 +22,19 @@ Features:
 
 ---
 
-### 🚧 Final Project (Coming Soon)
+### 🧜‍♀️ The Little Mermaid – Animated GIF Story (Final Project)
 
-This section will include my final project from the Python beginner course.
+A Python project that combines multiple images into a small animated fantasy story using GIF creation.
 
-Details and implementation will be added once the project is completed.
+Features:
+
+* GIF creation using the ImageIO library
+* Combining multiple images into an animated sequence
+* Organized folder structure for images and output files
+* Automatic GIF generation and opening
+* Story-based visual animation with fantasy elements
+
+=> See the project folder for more details and a dedicated README.
 
 ---
 
@@ -38,10 +46,14 @@ Details and implementation will be added once the project is completed.
 * Using conditional statements (if/elif/else)
 * Building simple console-based applications
 * Structuring small projects in a clean and organized way
+* Working with external Python libraries
+* Reading and processing image files
+* Creating GIF animations programmatically
+* Working with file paths and folder structures
 
 ---
 
 ## Notes
 
-This folder represents my progress in learning Python, from basic exercises to building interactive console games.
-
+This folder represents my progress in learning Python, from basic console applications to small creative projects involving animation and image processing.
+```
