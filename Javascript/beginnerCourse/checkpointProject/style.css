@@ -1,32 +1,183 @@
+/* ==========================================
+   1. GLOBAL STYLES & RESET
+   ========================================== */
+
+/* Reset margins, paddings, and define box-sizing for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Set up the main viewport area and prevent vertical scrolling */
 body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
+/* ==========================================
+   2. BACKGROUND EFFECTS (FOG & STARS)
+   ========================================== */
+
+/* Fix the fog effect container to cover the entire background layer */
 #fog {
     position: fixed;
     inset: 0;
     z-index: 0;
 }
 
+/* Fix the star container to cover the screen and let clicks pass through */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Define individual star size, position, glow, and assign the animation */
+.star {
+    box-shadow: 0px 0px 0.5px 0.5px rgba(255, 255, 255, 0.4);
+    position: absolute;
+    width: 0.8px;
+    height: 0.8px;
+    border-radius: 50%;
+    background-color: #d7d6d6;
+    /* Apply the custom twinkling animation loop */
+    animation: funkeln 1.5s infinite ease-in-out alternate;
+}
+
+/* Control the opacity and scale changes for the twinkling effect */
+@keyframes funkeln {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* ==========================================
+   3. LAYOUT & CONTAINERS
+   ========================================== */
+
+/* Style the main layout box using flexbox to center content at the top */
 .content {
     position: relative;
-    z-index: 1;
-
+    z-index: 2;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-
-    color: white;
+    padding-top: 10px;
     text-align: center;
+}
+
+/* Align horoscope elements vertically inside this centered wrapper */
+.horoscope-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* ==========================================
+   4. TYPOGRAPHY (HEADINGS & TEXT)
+   ========================================== */
+
+/* Style the main horoscope title */
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff5ff;
+    -webkit-text-stroke: 0.2px #673783;
+    text-shadow: 0 0 2px #ffffff,
+    0 0 15px #c96cff,
+    0 0 30px #8f00ff;
+}
+
+/* Style the secondary descriptive text paragraph*/
+p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.4rem;
+    font-weight: 500;
+    padding-top: 3px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.05px #c96cff;
+    text-shadow: 0 0 12px #b95cff;
+}
+
+/* Style the birthday section header */
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 35px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.05px #c96cff;
+    text-shadow:
+            0 0 2px #ffffff,
+            0 0 15px #e78aff,
+            0 0 35px #b000ff;
+}
+
+/* ==========================================
+   5. INTERACTIVE ELEMENTS (INPUT & BUTTON)
+   ========================================== */
+
+/* Style the date input field with a dark semi-transparent purple theme */
+input[type="date"] {
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
+    padding-left: 17px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.7rem;
+    color: #f8eaff;
+    background: rgba(20, 0, 35, 0.65);
+    border: 1px solid #d98aff;
+    border-radius: 8px;
+    outline: none;
+    box-shadow:
+            0 0 8px rgba(217, 138, 255, 0.5),
+            inset 0 0 15px rgba(150, 0, 255, 0.2);
+}
+
+/* Hide the browser's default calendar pop-up picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Style the submit button with a custom color scheme and purple shadow */
+button {
+    width: 150px;
+    height: 30px;
+    margin-top: 45px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.8rem;
+    color: #fff4ff;
+    background: rgba(90, 0, 130, 0.55);
+    border: 2px solid #dca0ff;
+    border-radius: 12px;
+    box-shadow:
+            0 0 8px #dca0ff,
+            0 0 15px rgba(180, 0, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Make the button glow brighter and change border color when hovered */
+button:hover {
+    border-color: #fdfdff;
+    box-shadow:
+            0 0 5px #e6bef6,
+            0 0 10px #e39cff,
+            0 0 15px #a000ff;
 }
