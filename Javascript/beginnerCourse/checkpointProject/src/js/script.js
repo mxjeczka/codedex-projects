@@ -61,9 +61,73 @@ const homepage = document.getElementById('home-page');
 const horoscopePage = document.getElementById('horoscope-page');
 const backButton = document.getElementById('back-btn');
 const birthdayInput = document.getElementById('birthday-input');
+const resultTitle = document.getElementById('result-title');
+const starSign = document.getElementById('star-sign');
+const horoscopeText = document.getElementById('horoscope-text');
 
 /* ==========================================
-   4. PAGE SWITCHING
+   4. HOROSCOPE RESULT
+   ========================================== */
+
+// Checks only the month and day from the birthday input.
+function showHoroscopeResult() {
+    var birthdayParts = birthdayInput.value.split('-');
+    var month = Number(birthdayParts[1]);
+    var day = Number(birthdayParts[2]);
+
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 20)) {
+        resultTitle.textContent = 'CAPRICORN';
+        starSign.textContent = 'Capricorn';
+        horoscopeText.textContent = 'Your patience and focus help you move forward today.';
+    } else if ((month === 1 && day >= 21) || (month === 2 && day <= 19)) {
+        resultTitle.textContent = 'AQUARIUS';
+        starSign.textContent = 'Aquarius';
+        horoscopeText.textContent = 'Your ideas stand out today. Trust your unique point of view.';
+    } else if ((month === 2 && day >= 20) || (month === 3 && day <= 20)) {
+        resultTitle.textContent = 'YPISCES';
+        starSign.textContent = 'Pisces';
+        horoscopeText.textContent = 'Listen to your intuition today. It may guide you well.';
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+        resultTitle.textContent = 'ARIES';
+        starSign.textContent = 'Aries';
+        horoscopeText.textContent = 'Today is full of energy and new ideas.';
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+        resultTitle.textContent = 'TAURUS';
+        starSign.textContent = 'Taurus';
+        horoscopeText.textContent = 'Stay grounded today. Slow progress still counts.';
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
+        resultTitle.textContent = 'GEMINI';
+        starSign.textContent = 'Gemini';
+        horoscopeText.textContent = 'A good conversation could bring you a new idea today.';
+    } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
+        resultTitle.textContent = 'CANCER';
+        starSign.textContent = 'Cancer';
+        horoscopeText.textContent = 'Give yourself space today and trust what feels right.';
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        resultTitle.textContent = 'LEO';
+        starSign.textContent = 'Leo';
+        horoscopeText.textContent = 'Your confidence can open a door today.';
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        resultTitle.textContent = 'VIRGO';
+        starSign.textContent = 'Virgo';
+        horoscopeText.textContent = 'A clear plan helps you feel more in control today.';
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
+        resultTitle.textContent = 'LIBRA';
+        starSign.textContent = 'Libra';
+        horoscopeText.textContent = 'Balance matters today. Choose what brings you peace.';
+    } else if ((month === 10 && day >= 23) || (month === 11 && day <= 22)) {
+        resultTitle.textContent = 'SCORPIO';
+        starSign.textContent = 'Scorpio';
+        horoscopeText.textContent = 'You may notice more than others today. Use that wisely.';
+    } else if ((month === 11 && day >= 23) || (month === 12 && day <= 21)) {
+        resultTitle.textContent = 'SAGITTARIUS';
+        starSign.textContent = 'Sagittarius';
+        horoscopeText.textContent = 'A little adventure or curiosity can shift your day.';
+    }
+}
+
+/* ==========================================
+   5. PAGE SWITCHING
    ========================================== */
 
 // When the reveal button is clicked, hide the homepage and show the result page.
@@ -71,15 +135,15 @@ revealButton.addEventListener('click', function () {
     if (birthdayInput.value === '') {
         return;
     }
+
+    showHoroscopeResult();
     homepage.classList.add('hidden');
     horoscopePage.classList.remove('hidden');
 });
 
-// When the back button is clicked, hide the result page, delete the data input and show the homepage again.
+// When the back button is clicked, hide the result page, delete the date input and show the homepage again.
 backButton.addEventListener('click', function () {
     horoscopePage.classList.add('hidden');
     homepage.classList.remove('hidden');
-    if (birthdayInput.value !== "") {
-        birthdayInput.value = '';
-    }
+    birthdayInput.value = '';
 });
