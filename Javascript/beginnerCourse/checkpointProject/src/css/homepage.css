@@ -1,8 +1,8 @@
 /* ==========================================
-   4. TYPOGRAPHY (HEADINGS & TEXT)
+   1. HOMEPAGE TEXT
    ========================================== */
 
-/* Style the main horoscope title */
+/* Style the homepage title. */
 h1 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.2rem;
@@ -14,7 +14,7 @@ h1 {
     0 0 30px #8f00ff;
 }
 
-/* Style the secondary descriptive text paragraph*/
+/* Style the short homepage description. */
 p {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 0.4rem;
@@ -25,7 +25,7 @@ p {
     text-shadow: 0 0 12px #b95cff;
 }
 
-/* Style the birthday section header */
+/* Style the birthday input heading. */
 h2 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.5rem;
@@ -40,10 +40,10 @@ h2 {
 }
 
 /* ==========================================
-   5. INTERACTIVE ELEMENTS (INPUT & BUTTON)
+   2. HOMEPAGE FORM
    ========================================== */
 
-/* Style the date input field with a dark semi-transparent purple theme */
+/* Style the birthday date input. */
 input[type="date"] {
     margin-top: 10px;
     width: 100px;
@@ -61,17 +61,20 @@ input[type="date"] {
             inset 0 0 15px rgba(150, 0, 255, 0.2);
 }
 
-/* Hide the browser's default calendar pop-up picker icon */
+/* Hide the default calendar icon in WebKit browsers. */
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
 }
 
-/* Style the submit button with a custom color scheme and purple shadow */
-button {
+/* Style the button that opens the result page. */
+#reveal-btn {
+    position: fixed;
+    bottom: 10px;
+
     width: 150px;
     height: 30px;
-    margin-top: 45px;
+
     font-family: Georgia, "Times New Roman", serif;
     font-size: 0.8rem;
     color: #fff4ff;
@@ -85,8 +88,8 @@ button {
     transition: all 0.3s ease;
 }
 
-/* Make the button glow brighter and change border color when hovered */
-button:hover {
+/* Add a stronger glow when the reveal button is hovered. */
+#reveal-btn:hover {
     border-color: #fdfdff;
     box-shadow:
             0 0 5px #e6bef6,

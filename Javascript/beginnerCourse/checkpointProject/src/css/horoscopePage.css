@@ -1,0 +1,87 @@
+/* ==========================================
+   1. CUSTOM FONT
+   ========================================== */
+
+/* Load the zodiac icon font for the star sign symbol. */
+@font-face {
+    font-family: "MeineHoroskopFont";
+    src: url("../font/zodiacFont.otf") format("opentype");
+}
+
+/* ==========================================
+   2. RESULT TEXT
+   ========================================== */
+
+/* Style the zodiac sign name at the top of the result page. */
+#result-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff5ff;
+    -webkit-text-stroke: 0.2px #673783;
+    text-shadow: 0 0 2px #ffffff,
+    0 0 15px #c96cff,
+    0 0 30px #8f00ff;
+}
+
+/* Style the zodiac symbol from the custom font. */
+#star-sign {
+    font-family: "MeineHoroskopFont", Georgia, serif;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-top: 0px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.5px rgb(61 36 112 / 0.82);
+    text-shadow:
+            0 0 2px #ffffff,
+            0 0 15px #e78aff,
+            0 0 35px #b000ff;
+}
+
+/* Style the small intro text above the horoscope. */
+#universText {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    font-style: italic;
+    padding-top: 15px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.05px #c96cff;
+    text-shadow: 0 0 12px #b95cff;
+}
+
+/* Style the random horoscope message. */
+#horoscope-text {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-top: 20px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.05px #673783;
+    text-shadow:
+            0 0 2px #ffffff,
+            0 0 15px #e78aff,
+            0 0 35px #b000ff;
+}
+
+/* ==========================================
+   3. BACK BUTTON
+   ========================================== */
+
+/* Place the back button in the bottom right corner. */
+#back-btn {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+
+    width: 30px;
+    height: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.5rem;
+    color: #fff4ff;
+    background: rgba(90, 0, 130, 0.55);
+    border: 1px solid #dca0ff;
+    border-radius: 5px;
+    cursor: pointer;
+}
