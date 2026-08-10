@@ -1,92 +1,4 @@
 /* ==========================================
-   1. GLOBAL STYLES & RESET
-   ========================================== */
-
-/* Reset margins, paddings, and define box-sizing for all elements */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set up the main viewport area and prevent vertical scrolling */
-body {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* ==========================================
-   2. BACKGROUND EFFECTS (FOG & STARS)
-   ========================================== */
-
-/* Fix the fog effect container to cover the entire background layer */
-#fog {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-}
-
-/* Fix the star container to cover the screen and let clicks pass through */
-#stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Define individual star size, position, glow, and assign the animation */
-.star {
-    box-shadow: 0px 0px 0.5px 0.5px rgba(255, 255, 255, 0.4);
-    position: absolute;
-    width: 0.8px;
-    height: 0.8px;
-    border-radius: 50%;
-    background-color: #d7d6d6;
-    /* Apply the custom twinkling animation loop */
-    animation: funkeln 1.5s infinite ease-in-out alternate;
-}
-
-/* Control the opacity and scale changes for the twinkling effect */
-@keyframes funkeln {
-    0% {
-        opacity: 0.2;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-}
-
-/* ==========================================
-   3. LAYOUT & CONTAINERS
-   ========================================== */
-
-/* Style the main layout box using flexbox to center content at the top */
-.content {
-    position: relative;
-    z-index: 2;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    text-align: center;
-}
-
-/* Align horoscope elements vertically inside this centered wrapper */
-.horoscope-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* ==========================================
    4. TYPOGRAPHY (HEADINGS & TEXT)
    ========================================== */
 
@@ -136,7 +48,7 @@ input[type="date"] {
     margin-top: 10px;
     width: 100px;
     height: 20px;
-    padding-left: 17px;
+    text-align: center;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 0.7rem;
     color: #f8eaff;
@@ -180,4 +92,5 @@ button:hover {
             0 0 5px #e6bef6,
             0 0 10px #e39cff,
             0 0 15px #a000ff;
+    transform: translateY(-3px);
 }
