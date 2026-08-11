@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Horoscope</title>
+    <!-- Preload the zodiac icon font before the result page needs it. -->
+    <link rel="preload" href="font/zodiacFont.otf" as="font" type="font/otf" crossorigin>
     <!-- Link the external CSS stylesheet for page styling -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -35,8 +37,8 @@
         <!-- Container for the text, result text and back button -->
         <div class="horoscope-content">
             <!-- Placeholder for the star sign name -->
-            <h2 id="star-sign">Your Sign</h2>
-            <p id="universText">The universe whispers...</p>
+            <h2 id="zodiac-symbol">Your Sign</h2>
+            <p id="universe-text">The universe whispers...</p>
 
             <!-- Placeholder for the horoscope reading text -->
             <p id="horoscope-text">Here comes the text.</p>

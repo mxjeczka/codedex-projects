@@ -46,11 +46,11 @@ body {
     height: 0.8px;
     border-radius: 50%;
     background-color: #d7d6d6;
-    animation: funkeln 1.5s infinite ease-in-out alternate;
+    animation: twinkle 1.5s infinite ease-in-out alternate;
 }
 
 /* Make the stars softly blink. */
-@keyframes funkeln {
+@keyframes twinkle {
     0% {
         opacity: 0.2;
         transform: scale(0.8);

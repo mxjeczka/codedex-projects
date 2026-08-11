@@ -24,28 +24,28 @@ VANTA.FOG({
    ========================================== */
 
 // Create small star elements and add them to the page.
-function createStars(amount) {
+function createStars(starAmount) {
     // Get the container where the stars should appear.
     var starsContainer = document.getElementById('stars');
 
     // Repeat this until the selected amount of stars exists.
-    for (var i = 0; i < amount; i++) {
+    for (var i = 0; i < starAmount; i++) {
         // Create one star.
-        var tmpStar = document.createElement('figure');
+        var starElement = document.createElement('figure');
 
         // Add the CSS class so the star gets its style and animation.
-        tmpStar.className = "star";
+        starElement.className = "star";
 
         // Put the star at a random place on the screen.
-        tmpStar.style.top = (Math.random() * 100) + '%';
-        tmpStar.style.left = (Math.random() * 100) + '%';
+        starElement.style.top = (Math.random() * 100) + '%';
+        starElement.style.left = (Math.random() * 100) + '%';
 
         // Give every star a slightly different animation timing.
-        tmpStar.style.animationDelay = (Math.random() * 2) + 's';
-        tmpStar.style.animationDuration = (Math.random() * 1.5 + 0.5) + 's';
+        starElement.style.animationDelay = (Math.random() * 2) + 's';
+        starElement.style.animationDuration = (Math.random() * 1.5 + 0.5) + 's';
 
         // Add the star to the star container.
-        starsContainer.appendChild(tmpStar);
+        starsContainer.appendChild(starElement);
     }
 }
 
@@ -60,7 +60,7 @@ createStars(100);
 const revealButton = document.getElementById('reveal-btn');
 
 // Get the homepage section.
-const homepage = document.getElementById('home-page');
+const homePage = document.getElementById('home-page');
 
 // Get the result page section.
 const horoscopePage = document.getElementById('horoscope-page');
@@ -75,7 +75,7 @@ const birthdayInput = document.getElementById('birthday-input');
 const resultTitle = document.getElementById('result-title');
 
 // Get the zodiac symbol text.
-const starSign = document.getElementById('star-sign');
+const zodiacSymbol = document.getElementById('zodiac-symbol');
 
 // Get the random horoscope text.
 const horoscopeText = document.getElementById('horoscope-text');
@@ -83,6 +83,13 @@ const horoscopeText = document.getElementById('horoscope-text');
 /* ==========================================
    4. HOROSCOPE RESULT
    ========================================== */
+
+// Wait until the zodiac icon font is ready.
+function loadZodiacFont() {
+    if (document.fonts) {
+        return document.fonts.load('1em ZodiacFont');
+    }
+}
 
 // Pick one random text from a list of possible horoscope texts.
 function getRandomFortune(fortunes) {
@@ -92,13 +99,13 @@ function getRandomFortune(fortunes) {
 
 // Check only the month and day from the birthday input.
 function showHoroscopeResult() {
-    var birthdayParts = birthdayInput.value.split('-');
-    var month = Number(birthdayParts[1]);
-    var day = Number(birthdayParts[2]);
+    var birthdayDateParts = birthdayInput.value.split('-');
+    var month = Number(birthdayDateParts[1]);
+    var day = Number(birthdayDateParts[2]);
 
     if ((month === 12 && day >= 22) || (month === 1 && day <= 20)) {
         resultTitle.textContent = 'CAPRICORN';
-        starSign.textContent = 'A';
+        zodiacSymbol.textContent = 'A';
         horoscopeText.textContent = getRandomFortune([
             'Your patience and focus help you move forward today.',
             'A careful choice will bring you closer to your goal.',
@@ -106,7 +113,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 1 && day >= 21) || (month === 2 && day <= 19)) {
         resultTitle.textContent = 'AQUARIUS';
-        starSign.textContent = 'B';
+        zodiacSymbol.textContent = 'B';
         horoscopeText.textContent = getRandomFortune([
             'Your ideas stand out today. Trust your unique point of view.',
             'A fresh thought could change how you see the day.',
@@ -114,7 +121,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 2 && day >= 20) || (month === 3 && day <= 20)) {
         resultTitle.textContent = 'PISCES';
-        starSign.textContent = 'C';
+        zodiacSymbol.textContent = 'C';
         horoscopeText.textContent = getRandomFortune([
             'Listen to your intuition today. It may guide you well.',
             'A quiet moment may show you what really matters.',
@@ -122,7 +129,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
         resultTitle.textContent = 'ARIES';
-        starSign.textContent = 'D';
+        zodiacSymbol.textContent = 'D';
         horoscopeText.textContent = getRandomFortune([
             'Today is full of energy and new ideas.',
             'Take the first step before overthinking the whole path.',
@@ -130,7 +137,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
         resultTitle.textContent = 'TAURUS';
-        starSign.textContent = 'E';
+        zodiacSymbol.textContent = 'E';
         horoscopeText.textContent = getRandomFortune([
             'Stay grounded today. Slow progress still counts.',
             'A calm decision will help you more than a rushed one.',
@@ -138,7 +145,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
         resultTitle.textContent = 'GEMINI';
-        starSign.textContent = 'F';
+        zodiacSymbol.textContent = 'F';
         horoscopeText.textContent = getRandomFortune([
             'A good conversation could bring you a new idea today.',
             'Curiosity will lead you somewhere useful.',
@@ -146,7 +153,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
         resultTitle.textContent = 'CANCER';
-        starSign.textContent = 'G';
+        zodiacSymbol.textContent = 'G';
         horoscopeText.textContent = getRandomFortune([
             'Give yourself space today and trust what feels right.',
             'A small act of care can change the mood of your day.',
@@ -154,7 +161,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
         resultTitle.textContent = 'LEO';
-        starSign.textContent = 'H';
+        zodiacSymbol.textContent = 'H';
         horoscopeText.textContent = getRandomFortune([
             'Your confidence can open a door today.',
             'Let yourself be seen, but stay generous with others.',
@@ -162,7 +169,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
         resultTitle.textContent = 'VIRGO';
-        starSign.textContent = 'I';
+        zodiacSymbol.textContent = 'I';
         horoscopeText.textContent = getRandomFortune([
             'A clear plan helps you feel more in control today.',
             'Fix one small detail and the bigger picture improves.',
@@ -170,7 +177,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
         resultTitle.textContent = 'LIBRA';
-        starSign.textContent = 'J';
+        zodiacSymbol.textContent = 'J';
         horoscopeText.textContent = getRandomFortune([
             'Balance matters today. Choose what brings you peace.',
             'A fair answer may be better than a fast one.',
@@ -178,7 +185,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 10 && day >= 23) || (month === 11 && day <= 22)) {
         resultTitle.textContent = 'SCORPIO';
-        starSign.textContent = 'K';
+        zodiacSymbol.textContent = 'K';
         horoscopeText.textContent = getRandomFortune([
             'You may notice more than others today. Use that wisely.',
             'Trust your depth, but do not carry everything alone.',
@@ -186,7 +193,7 @@ function showHoroscopeResult() {
         ]);
     } else if ((month === 11 && day >= 23) || (month === 12 && day <= 21)) {
         resultTitle.textContent = 'SAGITTARIUS';
-        starSign.textContent = 'L';
+        zodiacSymbol.textContent = 'L';
         horoscopeText.textContent = getRandomFortune([
             'A little adventure or curiosity can shift your day.',
             'Say yes to learning something new today.',
@@ -200,19 +207,20 @@ function showHoroscopeResult() {
    ========================================== */
 
 // Show the result page when the reveal button is clicked.
-revealButton.addEventListener('click', function () {
+revealButton.addEventListener('click', async function () {
     if (birthdayInput.value === '') {
         return;
     }
 
+    await loadZodiacFont();
     showHoroscopeResult();
-    homepage.classList.add('hidden');
+    homePage.classList.add('hidden');
     horoscopePage.classList.remove('hidden');
 });
 
 // Return to the homepage and clear the birthday input.
 backButton.addEventListener('click', function () {
     horoscopePage.classList.add('hidden');
-    homepage.classList.remove('hidden');
+    homePage.classList.remove('hidden');
     birthdayInput.value = '';
 });
