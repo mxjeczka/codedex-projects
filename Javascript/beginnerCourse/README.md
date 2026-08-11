@@ -6,9 +6,18 @@ It includes both smaller exercises and larger projects designed to reinforce cor
 
 ## Contents
 
-### 🚧 Checkpoint Project (Coming Soon)
+### 🔮 Horoscope (Checkpoint Project)
 
-Details and implementation will be added once the checkpoint project is completed.
+An interactive web-based horoscope where you enter your birthday and receive your zodiac sign and a random horoscope message.
+
+Features:
+
+* Interactive birthday input
+* Automatic zodiac sign calculation
+* Random horoscope messages
+* Magical animated fog and star background
+* Custom zodiac symbols and visual design
+* Interactive result and back button
 
 => See the project folder for more details and a dedicated README.
 
