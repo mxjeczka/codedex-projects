@@ -7,8 +7,8 @@ h1 {
     font-size: 2.6rem;
     font-weight: 500;
     color: #fff5ff;
-    -webkit-text-stroke: 0.2px #673783;
-    text-shadow: 0 0 2px #ffffff,
+    -webkit-text-stroke: 0.5px #673783;
+    text-shadow: 0 0 5px #ffffff,
     0 0 15px #c96cff,
     0 0 30px #8f00ff;
 }
@@ -17,19 +17,19 @@ h1 {
 p {
     font-size: 1rem;
     font-weight: 500;
-    padding-top: 3px;
+    padding-top: 15px;
     color: #ffffff;
-    -webkit-text-stroke: 0.05px #c96cff;
-    text-shadow: 0 0 12px #b95cff;
+    text-shadow: 0 0 12px #d2a4f5;
+    font-style: italic;
 }
 
 /* Style the birthday input heading. */
 h2 {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 500;
-    margin-top: 4rem;
+    margin-top: 6rem;
     color: #ffffff;
-    -webkit-text-stroke: 0.05px #c96cff;
+    -webkit-text-stroke: 1px #c96cff;
     text-shadow:
             0 0 2px #ffffff,
             0 0 15px #e78aff,
@@ -42,15 +42,15 @@ h2 {
 
 /* Style the birthday date input. */
 input[type="date"] {
-    margin-top: 1rem;
-    width: 170px;
-    height: 38px;
+    margin-top: 4rem;
+    width: 220px;
+    height: 55px;
     text-align: center;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 2rem;
     color: #f8eaff;
     background: rgba(20, 0, 35, 0.65);
-    border: 1px solid #d98aff;
+    border: 2px solid #d98aff;
     border-radius: 8px;
     outline: none;
     box-shadow:
@@ -67,13 +67,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Style the button that opens the result page. */
 #reveal-btn {
     position: fixed;
-    bottom: 2rem;
+    bottom: 3rem;
 
-    width: 240px;
-    height: 48px;
+    width: 380px;
+    height: 70px;
 
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 2.2rem;
     color: #fff4ff;
     background: rgba(90, 0, 130, 0.55);
     border: 2px solid #dca0ff;
