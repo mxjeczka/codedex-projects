@@ -151,7 +151,7 @@ function showHoroscopeResult() {
             'A quiet moment may show you what really matters.',
             'Let your imagination lead, but keep one foot on the ground.'
         ]);
-    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 20)) {
         resultTitle.textContent = 'ARIES';
         zodiacSymbol.textContent = 'D';
         horoscopeText.textContent = getRandomFortune([
@@ -159,7 +159,7 @@ function showHoroscopeResult() {
             'Take the first step before overthinking the whole path.',
             'Your courage can turn a small chance into something bigger.'
         ]);
-    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+    } else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) {
         resultTitle.textContent = 'TAURUS';
         zodiacSymbol.textContent = 'E';
         horoscopeText.textContent = getRandomFortune([
@@ -167,7 +167,7 @@ function showHoroscopeResult() {
             'A calm decision will help you more than a rushed one.',
             'Comfort is good, but a small change may be worth it.'
         ]);
-    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
         resultTitle.textContent = 'GEMINI';
         zodiacSymbol.textContent = 'F';
         horoscopeText.textContent = getRandomFortune([
@@ -175,7 +175,7 @@ function showHoroscopeResult() {
             'Curiosity will lead you somewhere useful.',
             'Say what you mean clearly and someone will understand.'
         ]);
-    } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
+    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
         resultTitle.textContent = 'CANCER';
         zodiacSymbol.textContent = 'G';
         horoscopeText.textContent = getRandomFortune([
@@ -183,7 +183,7 @@ function showHoroscopeResult() {
             'A small act of care can change the mood of your day.',
             'Protect your energy, but do not close yourself off completely.'
         ]);
-    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 23)) {
         resultTitle.textContent = 'LEO';
         zodiacSymbol.textContent = 'H';
         horoscopeText.textContent = getRandomFortune([
@@ -191,7 +191,7 @@ function showHoroscopeResult() {
             'Let yourself be seen, but stay generous with others.',
             'A bold choice may bring the attention you need.'
         ]);
-    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+    } else if ((month === 8 && day >= 24) || (month === 9 && day <= 23)) {
         resultTitle.textContent = 'VIRGO';
         zodiacSymbol.textContent = 'I';
         horoscopeText.textContent = getRandomFortune([
@@ -199,7 +199,7 @@ function showHoroscopeResult() {
             'Fix one small detail and the bigger picture improves.',
             'Your effort is noticed, even when nobody says it out loud.'
         ]);
-    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
+    } else if ((month === 9 && day >= 24) || (month === 10 && day <= 23)) {
         resultTitle.textContent = 'LIBRA';
         zodiacSymbol.textContent = 'J';
         horoscopeText.textContent = getRandomFortune([
@@ -207,7 +207,7 @@ function showHoroscopeResult() {
             'A fair answer may be better than a fast one.',
             'Beauty, kindness, or honesty could reset your day.'
         ]);
-    } else if ((month === 10 && day >= 23) || (month === 11 && day <= 22)) {
+    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 22)) {
         resultTitle.textContent = 'SCORPIO';
         zodiacSymbol.textContent = 'K';
         horoscopeText.textContent = getRandomFortune([
