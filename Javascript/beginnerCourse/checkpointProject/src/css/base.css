@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 /* ==========================================
@@ -73,7 +74,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 2rem;
     text-align: center;
 }
 

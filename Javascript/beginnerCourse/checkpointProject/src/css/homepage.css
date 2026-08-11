@@ -4,8 +4,7 @@
 
 /* Style the homepage title. */
 h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.2rem;
+    font-size: 2.6rem;
     font-weight: 500;
     color: #fff5ff;
     -webkit-text-stroke: 0.2px #673783;
@@ -16,8 +15,7 @@ h1 {
 
 /* Style the short homepage description. */
 p {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.4rem;
+    font-size: 1rem;
     font-weight: 500;
     padding-top: 3px;
     color: #ffffff;
@@ -27,10 +25,9 @@ p {
 
 /* Style the birthday input heading. */
 h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: 500;
-    margin-top: 35px;
+    margin-top: 4rem;
     color: #ffffff;
     -webkit-text-stroke: 0.05px #c96cff;
     text-shadow:
@@ -45,12 +42,12 @@ h2 {
 
 /* Style the birthday date input. */
 input[type="date"] {
-    margin-top: 10px;
-    width: 100px;
-    height: 20px;
+    margin-top: 1rem;
+    width: 170px;
+    height: 38px;
     text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.7rem;
+    font-family: inherit;
+    font-size: 1rem;
     color: #f8eaff;
     background: rgba(20, 0, 35, 0.65);
     border: 1px solid #d98aff;
@@ -70,13 +67,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Style the button that opens the result page. */
 #reveal-btn {
     position: fixed;
-    bottom: 10px;
+    bottom: 2rem;
 
-    width: 150px;
-    height: 30px;
+    width: 240px;
+    height: 48px;
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.8rem;
+    font-family: inherit;
+    font-size: 1.1rem;
     color: #fff4ff;
     background: rgba(90, 0, 130, 0.55);
     border: 2px solid #dca0ff;
