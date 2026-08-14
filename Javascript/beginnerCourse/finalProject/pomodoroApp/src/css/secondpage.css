@@ -1,0 +1,107 @@
+/* ==========================================
+   MESSAGE
+   ========================================== */
+
+#second-page p {
+    margin: 0;
+}
+
+.app-message {
+    height: 20px;
+    margin: 10px auto 20px auto;
+}
+
+/* ==========================================
+   TIMER CIRCLE
+   ========================================== */
+
+.app-circle {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+.circle-shape {
+    pointer-events: none;
+}
+
+.semi-circle {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    box-sizing: border-box;
+    border: solid 6px;
+}
+
+.left-side {
+    top: 0;
+    left: 0;
+    transform-origin: right center;
+    transform: rotate(0deg);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-right: none;
+    z-index: 1;
+}
+
+.right-side {
+    top: 0;
+    left: 100px;
+    transform-origin: left center;
+    transform: rotate(0deg);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-left: none;
+}
+
+.circle {
+    border-color: #bf5239;
+}
+
+.circle-mask {
+    border-color: #e85a71;
+}
+
+/* ==========================================
+   COUNTER
+   ========================================== */
+
+.timer-display {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 250%;
+    position: relative;
+    top: 50px;
+    color: #d8e9ef;
+}
+
+/* ==========================================
+   BUTTON
+   ========================================== */
+
+.start-btn,
+#back-btn {
+    position: relative;
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    outline: none;
+    color: #d8e9ef;
+    cursor: pointer;
+}
+
+.start-btn {
+    top: 50px;
+}
+
+#back-btn {
+    margin-top: 5rem;
+    cursor: pointer;
+}
+
+.start-btn:hover,
+#back-btn:hover {
+    color: #90c0d1;
+}

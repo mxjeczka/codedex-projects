@@ -1,0 +1,53 @@
+/* ==========================================
+   FIRST PAGE TEXT
+   ========================================== */
+
+#first-page h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #231b07;
+    -webkit-text-stroke: 0.5px #673783;
+    text-shadow: 0 0 5px #ffffff,
+    0 0 15px #c96cff,
+    0 0 30px #8f00ff;
+}
+
+#first-page p {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 15px;
+    color: #231b07;
+    text-shadow: 0 0 12px #d2a4f5;
+    font-style: italic;
+}
+
+/* ==========================================
+   NEXT BUTTON
+   ========================================== */
+
+#next-page-btn {
+    width: 380px;
+    height: 70px;
+    margin-top: 2rem;
+
+    font-family: inherit;
+    font-size: 2.2rem;
+    color: #231b07;
+    background: rgba(90, 0, 130, 0.55);
+    border: 2px solid #dca0ff;
+    border-radius: 12px;
+    box-shadow:
+            0 0 8px #dca0ff,
+            0 0 15px rgba(180, 0, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#next-page-btn:hover {
+    border-color: #231b07;
+    box-shadow:
+            0 0 5px #e6bef6,
+            0 0 10px #e39cff,
+            0 0 15px #a000ff;
+    transform: translateY(-3px);
+}
