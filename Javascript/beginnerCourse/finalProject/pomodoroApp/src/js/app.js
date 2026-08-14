@@ -82,10 +82,30 @@ async function playOpeningVideo() {
         return;
     }
 
+    const fadeEarlyStart = 1.0;
+    let fadeTriggered = false;
+
+    const checkTime = () => {
+        const timeLeft = openingVideo.duration - openingVideo.currentTime;
+
+        // Wenn die Restzeit erreicht ist, starten wir das Verblassen vorab
+        if (timeLeft <= fadeEarlyStart && !fadeTriggered) {
+            fadeTriggered = true;
+            openingVideo.classList.add("fade-out"); // Aktiviert Ihre CSS-Transition
+            showBackgroundVideo();                 // Blendet das neue Video im Hintergrund ein
+        }
+    };
+
+    // Prüft bei jedem Frame-Wechsel die aktuelle Zeit des Videos
+    openingVideo.addEventListener("timeupdate", checkTime);
+
+    // Wenn das Video komplett vorbei ist, wechseln wir nur noch die Seite
     openingVideo.addEventListener("ended", () => {
-        fadeToSecondPage();
+        openingVideo.removeEventListener("timeupdate", checkTime); // Sauber aufräumen
+        showSecondPage(); // Nur noch die Seite umschalten, da das Fading schon läuft
         nextPageButton.disabled = false;
     }, { once: true });
+    // =========================================================
 }
 
 function playBackgroundVideo() {
