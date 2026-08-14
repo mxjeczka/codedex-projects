@@ -1,22 +1,76 @@
 /* ==========================================
+   FIRST PAGE BACKGROUND
+   ========================================== */
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#openingVideo {
+    z-index: 1;
+}
+
+#bgVideo {
+    z-index: 0;
+}
+
+.background-video.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.background-video.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ==========================================
    FIRST PAGE TEXT
    ========================================== */
 
 #first-page h1 {
-    font-size: 2.6rem;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: block;
+    transform: translateY(0.5rem);
+}
+
+.text-curve-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+#first-page h1 text {
+    font-size: 4rem;
     font-weight: 500;
-    color: #231b07;
-    -webkit-text-stroke: 0.5px #673783;
-    text-shadow: 0 0 5px #ffffff,
-    0 0 15px #c96cff,
-    0 0 30px #8f00ff;
+    font-family: inherit;
+    fill: #ffffff;
+
+    stroke: #000000;
+    stroke-width: 3px;
+    paint-order: stroke fill;
+
+    filter: drop-shadow(0px 0px 5px #ffffff)
+    drop-shadow(0px 0px 15px #ffd56c)
+    drop-shadow(0px 0px 30px #64551c);
 }
 
 #first-page p {
     font-size: 1rem;
     font-weight: 500;
     padding-top: 15px;
-    color: #231b07;
+    color: #ffffff;
     text-shadow: 0 0 12px #d2a4f5;
     font-style: italic;
 }
@@ -26,28 +80,30 @@
    ========================================== */
 
 #next-page-btn {
-    width: 380px;
+    width: 310px;
     height: 70px;
     margin-top: 2rem;
+    margin-right: 2rem;
 
     font-family: inherit;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: #231b07;
-    background: rgba(90, 0, 130, 0.55);
-    border: 2px solid #dca0ff;
+    background: rgb(130 89 0 / 0.55);
+    border: 2px solid #fff2a0;
     border-radius: 12px;
     box-shadow:
-            0 0 8px #dca0ff,
-            0 0 15px rgba(180, 0, 255, 0.7);
+            0 0 8px #ffefa0,
+            0 0 15px rgb(255 221 0 / 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 #next-page-btn:hover {
-    border-color: #231b07;
+    border-color: #483b03;
     box-shadow:
-            0 0 5px #e6bef6,
-            0 0 10px #e39cff,
-            0 0 15px #a000ff;
-    transform: translateY(-3px);
+            0 0 5px #9b9578,
+            0 0 10px #b09d6c,
+            0 0 15px #9b7d05;
+    transform: scale(1.05);
 }

@@ -12,6 +12,9 @@ const secondElement = document.querySelector(".seconds");
 const messageElement = document.querySelector(".app-message");
 const startButton = document.querySelector(".start-btn");
 
+const openingVideo = document.getElementById("openingVideo");
+const bgVideo = document.getElementById("bgVideo");
+
 /* ==========================================
    TIMER STATE
    ========================================== */
@@ -35,6 +38,60 @@ function showFirstPage() {
 function showSecondPage() {
     firstPage.classList.add("hidden");
     secondPage.classList.remove("hidden");
+}
+
+/* ==========================================
+   VIDEO CONTROL
+   ========================================== */
+
+function showBackgroundVideo() {
+    bgVideo.classList.add("is-visible");
+}
+
+function hideBackgroundVideo() {
+    bgVideo.pause();
+    bgVideo.currentTime = 0;
+    bgVideo.classList.remove("is-visible");
+}
+
+function resetOpeningVideo() {
+    openingVideo.pause();
+    openingVideo.currentTime = 0;
+    openingVideo.classList.remove("fade-out");
+    openingVideo.classList.add("is-visible");
+}
+
+function fadeToSecondPage() {
+    showBackgroundVideo();
+    showSecondPage();
+    openingVideo.classList.add("fade-out");
+}
+
+async function playOpeningVideo() {
+    nextPageButton.disabled = true;
+    firstPage.classList.add("hidden");
+    openingVideo.currentTime = 0;
+    openingVideo.classList.remove("fade-out");
+    openingVideo.classList.add("is-visible");
+
+    try {
+        await openingVideo.play();
+    } catch {
+        fadeToSecondPage();
+        nextPageButton.disabled = false;
+        return;
+    }
+
+    openingVideo.addEventListener("ended", () => {
+        fadeToSecondPage();
+        nextPageButton.disabled = false;
+    }, { once: true });
+}
+
+function playBackgroundVideo() {
+    bgVideo.muted = true;
+    bgVideo.loop = true;
+    bgVideo.play().catch(() => {});
 }
 
 /* ==========================================
@@ -67,6 +124,8 @@ function startTimer() {
         alert("Session has already started.");
         return;
     }
+
+    playBackgroundVideo();
 
     isRunning = true;
     showMessage("focus time");
@@ -147,11 +206,13 @@ nextPageButton.addEventListener("click", async () => {
         await document.fonts.load("1em TrajanusBricks");
     }
 
-    showSecondPage();
+    await playOpeningVideo();
 });
 
 backButton.addEventListener("click", () => {
     resetTimer();
+    hideBackgroundVideo();
+    resetOpeningVideo();
     showFirstPage();
 });
 

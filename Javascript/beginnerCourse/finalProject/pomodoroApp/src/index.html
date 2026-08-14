@@ -9,16 +9,33 @@
 </head>
 <body>
 
+<video id="openingVideo" class="background-video is-visible" muted preload="auto">
+    <source src="background/openingScene.mp4" type="video/mp4">
+</video>
+
+<video id="bgVideo" class="background-video" muted loop preload="auto">
+    <source src="background/background.mp4" type="video/mp4">
+</video>
+
 <main class="content">
     <section id="first-page">
-        <h1>are you ready for the long road?</h1>
+        <h1>
+            <svg viewBox="10 110 1200 400" class="text-curve-svg">
+                <path id="road-curve" d="M -200,550 C 400,60 700,15 1380,500" fill="none" />
+                <text>
+                    <textPath href="#road-curve" startOffset="50%" text-anchor="middle">
+                        are you ready for the long road?
+                    </textPath>
+                </text>
+            </svg>
+        </h1>
 
         <!-- Inner container to vertically group the form elements together -->
         <div class="pomodoro-container">
             <p>every journey begins with a single step.</p>
 
             <!-- Trigger button that brings you to the next page -->
-            <button id="next-page-btn">Begin the Journey</button>
+            <button id="next-page-btn">begin the journey</button>
         </div>
     </section>
 
