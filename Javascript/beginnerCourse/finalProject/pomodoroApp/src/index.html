@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SECTION: Fonts -->
+    <!-- Connects to Google Fonts before loading the font file. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Connects to the Google Fonts static file server. -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loads the fonts used by the app. -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=EG+Garamond:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- SECTION: Styles -->
+    <!-- Loads the CSS file for the app design. -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- SECTION: Page title -->
+    <!-- Sets the title shown in the browser tab. -->
+    <title>Pomodoro App</title>
+</head>
+<body>
+<!-- SECTION: App container -->
+<!-- Holds the full Pomodoro app. -->
+<div class="app-container">
+    <!-- Shows the app name. -->
+    <h1>pomodoro</h1>
+
+    <!-- Shows a short status message for the user. -->
+    <div class="app-message">press start to begin</div>
+
+    <!-- SECTION: Timer circle -->
+    <!-- Holds the circle design, timer text, and start button. -->
+    <div class="app-circle">
+        <!-- Creates the visual circle around the timer. -->
+        <div class="circle-shape">
+            <!-- Covers the right side of the circle. -->
+            <div class="semi-circle right-side circle-mask"></div>
+            <!-- Shows the right colored side of the circle. -->
+            <div class="semi-circle right-side circle"></div>
+            <!-- Covers the left side of the circle. -->
+            <div class="semi-circle left-side circle-mask"></div>
+            <!-- Shows the left colored side of the circle. -->
+            <div class="semi-circle left-side circle"></div>
+        </div>
+
+        <!-- SECTION: Timer text -->
+        <!-- Shows the minutes and seconds. -->
+        <div class="app-counter-box">
+            <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
+        </div>
+
+        <!-- SECTION: Button -->
+        <!-- Starts the Pomodoro timer. -->
+        <button class="btn-start">start</button>
+    </div>
+</div>
+
+<!-- SECTION: JavaScript -->
+<!-- Loads the app logic after the HTML is ready. -->
+<script src="./js/app.js"></script>
+</body>
+</html>

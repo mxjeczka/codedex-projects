@@ -1,0 +1,144 @@
+/* ============================== */
+/* SECTION: Page base */
+/* These styles set the main page look. */
+/* ============================== */
+
+/* Sets the main font, text color, and background for the whole page. */
+html {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    min-height: 100vh;
+    color: #d8e9ef;
+    background-image: linear-gradient(-20deg, #025159 0%, #733b36 100%);
+    background-size: cover;
+}
+
+/* Removes extra space from the app title and keeps its color light. */
+h1 {
+    margin: 0 auto 10px auto;
+    color: #d8e9ef;
+}
+
+/* Removes the default paragraph margin. */
+p {
+    margin: 0;
+}
+
+/* ============================== */
+/* SECTION: App layout */
+/* These styles place the app in the middle of the page. */
+/* ============================== */
+
+/* Sets the size and center alignment of the app. */
+.app-container {
+    width: 250px;
+    height: 420px;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Gives the message area a fixed height and spacing. */
+.app-message {
+    height: 20px;
+    margin: 10px auto 20px auto;
+}
+
+/* ============================== */
+/* SECTION: Timer circle */
+/* These styles build the circle around the timer. */
+/* ============================== */
+
+/* Creates the square area that holds the timer circle. */
+.app-circle {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+/* Stops the circle parts from blocking button clicks. */
+.circle-shape {
+    pointer-events: none;
+}
+
+/* Sets the shared size and border for all half-circle parts. */
+.semi-circle {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    box-sizing: border-box;
+    border: solid 6px;
+}
+
+/* Places and rounds the left side of the circle. */
+.left-side {
+    top: 0;
+    left: 0;
+    transform-origin: right center;
+    transform: rotate(0deg);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-right: none;
+    z-index: 1;
+}
+
+/* Places and rounds the right side of the circle. */
+.right-side {
+    top: 0;
+    left: 100px;
+    transform-origin: left center;
+    transform: rotate(0deg);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-left: none;
+}
+
+/* Sets the main circle color. */
+.circle {
+    border-color: #bf5239;
+}
+
+/* Sets the mask circle color. */
+.circle-mask {
+    border-color: #e85a71;
+}
+
+/* ============================== */
+/* SECTION: Timer text */
+/* These styles position the countdown number. */
+/* ============================== */
+
+/* Places and styles the minutes and seconds inside the circle. */
+.app-counter-box {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 250%;
+    position: relative;
+    top: 50px;
+    color: #d8e9ef;
+}
+
+/* ============================== */
+/* SECTION: Button */
+/* These styles control the start button. */
+/* ============================== */
+
+/* Makes the button look like simple text under the timer. */
+button {
+    position: relative;
+    top: 50px;
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    outline: none;
+    color: #d8e9ef;
+}
+
+/* Changes the button color when the user moves over it. */
+button:hover {
+    color: #90c0d1;
+}
