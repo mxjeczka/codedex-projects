@@ -40,8 +40,6 @@
 
     <section id="second-page" class="hidden">
         <div class="pomodoro-container">
-            <!-- Shows a short status message for the user. -->
-            <div class="app-message">press start to begin</div>
 
             <!-- Timer circle -->
             <!-- Holds the circle design, timer text, and start button. -->
@@ -64,13 +62,24 @@
                     <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
                 </div>
 
-                <!-- Button -->
-                <!-- Starts the Pomodoro timer. -->
-                <button class="start-btn">start</button>
+                <p class="timer-message" aria-live="polite">ready</p>
+
+                <div class="timer-settings" aria-label="timer settings">
+                    <label class="custom-time">
+                        <span>min</span>
+                        <input id="custom-minutes" type="number" min="1" max="59" value="25">
+                    </label>
+                </div>
+
+                <div class="timer-actions">
+                    <button class="start-btn" type="button">start</button>
+                    <button class="stop-btn" type="button">stop</button>
+                    <button class="reset-btn" type="button">reset</button>
+                </div>
             </div>
 
             <!-- Button to go back to the home page -->
-            <button id="back-btn">Back</button>
+            <button id="back-btn">back</button>
         </div>
     </section>
 </main>

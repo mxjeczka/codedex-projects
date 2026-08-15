@@ -9,8 +9,11 @@ const backButton = document.getElementById("back-btn");
 
 const minuteElement = document.querySelector(".minutes");
 const secondElement = document.querySelector(".seconds");
-const messageElement = document.querySelector(".app-message");
 const startButton = document.querySelector(".start-btn");
+const stopButton = document.querySelector(".stop-btn");
+const resetButton = document.querySelector(".reset-btn");
+const customMinutesInput = document.getElementById("custom-minutes");
+const timerMessage = document.querySelector(".timer-message");
 
 const openingVideo = document.getElementById("openingVideo");
 const bgVideo = document.getElementById("bgVideo");
@@ -19,10 +22,9 @@ const bgVideo = document.getElementById("bgVideo");
    TIMER STATE
    ========================================== */
 
-const sessionMinutes = Number.parseInt(minuteElement.textContent, 10);
-const startSeconds = sessionMinutes * 60;
+let selectedMinutes = Number.parseInt(minuteElement.textContent, 10);
 
-let totalSeconds = startSeconds;
+let totalSeconds = selectedMinutes * 60;
 let intervalId = null;
 let isRunning = false;
 
@@ -46,6 +48,7 @@ function showSecondPage() {
 
 function showBackgroundVideo() {
     bgVideo.classList.add("is-visible");
+    playBackgroundVideo();
 }
 
 function hideBackgroundVideo() {
@@ -132,8 +135,23 @@ function renderTime() {
 }
 
 function showMessage(message) {
-    messageElement.textContent = message;
+    timerMessage.textContent = message;
 }
+
+function clampMinutes(minutes) {
+    if (Number.isNaN(minutes)) {
+        return selectedMinutes;
+    }
+
+    return Math.min(Math.max(minutes, 1), 59);
+}
+
+function setSessionMinutes(minutes) {
+    selectedMinutes = clampMinutes(minutes);
+    customMinutesInput.value = selectedMinutes;
+    resetTimer();
+}
+
 
 /* ==========================================
    TIMER CONTROL
@@ -145,7 +163,9 @@ function startTimer() {
         return;
     }
 
-    playBackgroundVideo();
+    if (totalSeconds <= 0) {
+        totalSeconds = selectedMinutes * 60;
+    }
 
     isRunning = true;
     showMessage("focus time");
@@ -163,16 +183,24 @@ function startTimer() {
 }
 
 function stopTimer() {
+    if (!intervalId) {
+        return;
+    }
+
     clearInterval(intervalId);
     intervalId = null;
     isRunning = false;
+    startButton.textContent = "resume";
+    showMessage("paused");
 }
 
 function resetTimer() {
-    stopTimer();
-    totalSeconds = startSeconds;
+    clearInterval(intervalId);
+    intervalId = null;
+    isRunning = false;
+    totalSeconds = selectedMinutes * 60;
     startButton.textContent = "start";
-    showMessage("press start to begin");
+    showMessage("ready");
     renderTime();
 }
 
@@ -181,7 +209,7 @@ function completeTimer() {
     playBell();
     showMessage("session complete");
     startButton.textContent = "start";
-    totalSeconds = startSeconds;
+    totalSeconds = selectedMinutes * 60;
 }
 
 /* ==========================================
@@ -238,6 +266,18 @@ backButton.addEventListener("click", () => {
 
 startButton.addEventListener("click", () => {
     startTimer();
+});
+
+stopButton.addEventListener("click", () => {
+    stopTimer();
+});
+
+resetButton.addEventListener("click", () => {
+    resetTimer();
+});
+
+customMinutesInput.addEventListener("change", () => {
+    setSessionMinutes(Number.parseInt(customMinutesInput.value, 10));
 });
 
 /* ==========================================

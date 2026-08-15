@@ -1,17 +1,4 @@
 /* ==========================================
-   MESSAGE
-   ========================================== */
-
-#second-page p {
-    margin: 0;
-}
-
-.app-message {
-    height: 20px;
-    margin: 10px auto 20px auto;
-}
-
-/* ==========================================
    TIMER CIRCLE
    ========================================== */
 
@@ -19,7 +6,7 @@
     position: relative;
     margin: 0 auto;
     width: 200px;
-    height: 200px;
+    height: 320px;
 }
 
 .circle-shape {
@@ -75,13 +62,24 @@
     color: #d8e9ef;
 }
 
+.timer-message {
+    font-family: inherit;
+    position: relative;
+    top: 54px;
+    min-height: 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #d8e9ef;
+}
+
 /* ==========================================
    BUTTON
    ========================================== */
 
-.start-btn,
-#back-btn {
+.start-btn {
     position: relative;
+    font-family: inherit;
     font-size: 80%;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -92,16 +90,103 @@
     cursor: pointer;
 }
 
-.start-btn {
-    top: 50px;
+.timer-settings {
+    position: relative;
+    top: 66px;
+    display: grid;
+    gap: 0.55rem;
+    justify-items: center;
 }
 
-#back-btn {
-    margin-top: 5rem;
+.timer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+}
+
+.stop-btn,
+.reset-btn {
+    font-family: inherit;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgb(216 233 239 / 0.75);
+    border-radius: 6px;
+    background: rgb(12 31 37 / 0.55);
+    color: #d8e9ef;
     cursor: pointer;
 }
 
+.custom-time {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #d8e9ef;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+#custom-minutes {
+    width: 60px;
+    height: 30px;
+    padding: 0 0.35rem;
+    font: inherit;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #d8e9ef;
+    background: rgb(12 31 37 / 0.6);
+    border: 1px solid rgb(216 233 239 / 0.75);
+    border-radius: 6px;
+}
+
+.timer-actions {
+    position: relative;
+    top: 76px;
+}
+
+.start-btn,
+.stop-btn,
+.reset-btn {
+    min-width: 54px;
+    height: 30px;
+    padding: 0 0.45rem;
+}
+
 .start-btn:hover,
-#back-btn:hover {
+.stop-btn:hover,
+.reset-btn:hover {
     color: #90c0d1;
+    border-color: #90c0d1;
+}
+
+#back-btn {
+    width: 70px;
+    height: 40px;
+
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 3;
+
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #adcead;
+    background: rgb(0 130 17 / 0.55);
+    border: 2px solid #a3ffa0;
+    border-radius: 12px;
+    box-shadow:
+            0 0 8px #a6ffa0,
+            0 0 15px rgb(8 255 0 / 0.7);
+    cursor: pointer;
+}
+
+
+#back-btn:hover {
+    border-color: #f2fff2;
+    box-shadow:
+            0 0 5px #d6f6d5,
+            0 0 10px #abdc9c,
+            0 0 15px #309b05;
+    transform: scale(1.05);
 }
