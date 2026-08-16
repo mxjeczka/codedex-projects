@@ -24,7 +24,7 @@
             105deg,
             #a16d2a 0%,
             #e3b16f 40%,
-            #fcecd0 50%, /* Das ist der helle Lichtstreif */
+            #fcecd0 50%,
             #e3a96f 60%,
             #8c5b1a 100%
     );
@@ -33,9 +33,7 @@
     -webkit-text-fill-color: transparent;
     display: inline-block;
 
-    filter: drop-shadow(1px 1px 0px #5c4308)
-    drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6))
-    drop-shadow(0 0 10px rgba(227, 193, 111, 0.3));
+    filter: drop-shadow(1px 1px 0px #5c4308) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 10px rgba(227, 193, 111, 0.3));
 
 }
 
@@ -47,80 +45,98 @@
     display: grid;
     gap: 0.55rem;
     justify-items: center;
-}
-
-.timer-actions {
-    display: flex;
-    justify-content: center;
-    gap: 0.45rem;
+    margin-top: 1rem;
 }
 
 .custom-time {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    color: #d8e9ef;
-    font-size: 0.7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd291;
+
+    /* Starke, dunkle Konturschatten + weicher dunkler Schatten gegen den hellen Nebel */
+    filter: drop-shadow(0px 1px 1px #2b1f0b)
+    drop-shadow(1px 1px 1px #2b1f0b)
+    drop-shadow(-1px 1px 1px #2b1f0b)
+    drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.9));
 }
 
 #custom-minutes {
     width: 60px;
-    height: 30px;
-    padding: 0 0.35rem;
+    height: 35px;
+
     font: inherit;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     text-align: center;
-    color: #d8e9ef;
-    background: rgb(12 31 37 / 0.6);
-    border: 1px solid rgb(216 233 239 / 0.75);
-    border-radius: 6px;
+    color: #fcecd0;
+    background: rgba(14, 24, 21, 0.75);
+
+    border: 1.5px solid rgba(227, 177, 111, 0.3);
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.start-btn,
-.stop-btn,
-.reset-btn {
-    min-width: 54px;
-    height: 30px;
+#custom-minutes:focus {
+    border-color: #e3b16f;
+}
+
+
+.timer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* Gemeinsame Basis für alle drei Buttons */
+.start-btn, .stop-btn, .reset-btn {
+    margin-top: 4.5rem;
     font-family: inherit;
     font-size: 1rem;
-    padding: 0 0.45rem;
+    font-weight: 500;
+    color: #fcecd0;
+
+    min-width: 80px;
+    height: 35px;
+    padding: 0 0.5rem;
+    border: 1.5px solid rgba(227, 177, 111, 0.4);
+    border-radius: 6px;
     cursor: pointer;
+
+    /* Der übergreifende Farbverlauf (Mystisches Waldgrün zu magischem Gold) */
+    background: linear-gradient(90deg, #0d261d 0%, #1a4231 40%, #523f1c 70%, #2b1f0b 100%);
+    background-size: 300% 100%; /* Vergrößert den Hintergrund für den Übergang */
+
+    /* Weicher Übergang für Hover-Effekte */
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Verschiebung des Verlaufs für den linken Button (Mehr Grün) */
 .start-btn {
-    border: 1px solid rgb(216 233 239 / 0.75);
-    border-radius: 6px;
-    background: rgb(12 31 37 / 0.55);
-    color: #d8e9ef;
+    background-position: 0% 50%;
 }
 
-.stop-btn{
-    border: 1px solid rgb(216 233 239 / 0.75);
-    border-radius: 6px;
-    background: rgb(12 31 37 / 0.55);
-    color: #d8e9ef;
+/* Verschiebung für den mittleren Button (Übergang) */
+.stop-btn {
+    background-position: 50% 50%;
 }
 
+/* Verschiebung für den rechten Button (Mehr Gold/Dunkelgold) */
 .reset-btn {
-    border: 1px solid rgb(216 233 239 / 0.75);
-    border-radius: 6px;
-    background: rgb(12 31 37 / 0.55);
-    color: #d8e9ef;
+    background-position: 100% 50%;
 }
 
-.start-btn:hover{
-    color: #90c0d1;
-    border-color: #90c0d1;
-}
-
-.stop-btn:hover {
-    color: #90c0d1;
-    border-color: #90c0d1;
-}
-
-.reset-btn:hover {
-    color: #90c0d1;
-    border-color: #90c0d1;
+/* Einheitlicher Hover-Effekt: Die Buttons leuchten auf, wenn man drüberfährt */
+.start-btn:hover, .stop-btn:hover, .reset-btn:hover {
+    color: #ffffff;
+    border-color: #e3b16f;
+    box-shadow: 0 0 12px rgba(227, 177, 111, 0.4);
+    filter: brightness(1.2);
+    transform: translateY(-2px); /* Minimales Anheben */
 }
 
 #back-btn {
@@ -133,24 +149,22 @@
     z-index: 3;
 
     font-family: inherit;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #adcead;
-    background: rgb(0 130 17 / 0.55);
-    border: 2px solid #a3ffa0;
-    border-radius: 12px;
-    box-shadow:
-            0 0 8px #a6ffa0,
-            0 0 15px rgb(8 255 0 / 0.7);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #fcecd0;
+    background: linear-gradient(135deg, #163824 0%, #0b1f14 100%);
+    border: 1.5px solid #4a7c59;
+    border-radius: 6px;
+
+    /* Ein weicherer, atmosphärischer Schatten statt grellem Neon */
+    box-shadow: 0 0 10px rgba(74, 124, 89, 0.4);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-
 #back-btn:hover {
-    border-color: #f2fff2;
-    box-shadow:
-            0 0 5px #d6f6d5,
-            0 0 10px #abdc9c,
-            0 0 15px #309b05;
+    border-color: #e3b16f; /* Wechselt beim Hovern zu Gold, passend zum Ring! */
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(227, 177, 111, 0.5);
     transform: scale(1.05);
 }
