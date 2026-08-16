@@ -40,42 +40,25 @@
 
     <section id="second-page" class="hidden">
         <div class="pomodoro-container">
+            <img id="image" src="image/lortRing.png" alt="">
 
-            <!-- Timer circle -->
-            <!-- Holds the circle design, timer text, and start button. -->
-            <div class="app-circle">
-                <!-- Creates the visual circle around the timer. -->
-                <div class="circle-shape">
-                    <!-- Covers the right side of the circle. -->
-                    <div class="semi-circle right-side circle-mask"></div>
-                    <!-- Shows the right colored side of the circle. -->
-                    <div class="semi-circle right-side circle"></div>
-                    <!-- Covers the left side of the circle. -->
-                    <div class="semi-circle left-side circle-mask"></div>
-                    <!-- Shows the left colored side of the circle. -->
-                    <div class="semi-circle left-side circle"></div>
-                </div>
+            <!-- Timer text -->
+            <!-- Shows the minutes and seconds. -->
+            <div class="timer-display">
+                <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
+            </div>
 
-                <!-- Timer text -->
-                <!-- Shows the minutes and seconds. -->
-                <div class="timer-display">
-                    <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
-                </div>
+            <div class="timer-settings" aria-label="timer settings">
+                <label class="custom-time">
+                    <span>min</span>
+                    <input id="custom-minutes" type="number" min="1" max="59" value="25">
+                </label>
+            </div>
 
-                <p class="timer-message" aria-live="polite">ready</p>
-
-                <div class="timer-settings" aria-label="timer settings">
-                    <label class="custom-time">
-                        <span>min</span>
-                        <input id="custom-minutes" type="number" min="1" max="59" value="25">
-                    </label>
-                </div>
-
-                <div class="timer-actions">
-                    <button class="start-btn" type="button">start</button>
-                    <button class="stop-btn" type="button">stop</button>
-                    <button class="reset-btn" type="button">reset</button>
-                </div>
+            <div class="timer-actions">
+                <button class="start-btn" type="button">start</button>
+                <button class="stop-btn" type="button">stop</button>
+                <button class="reset-btn" type="button">reset</button>
             </div>
 
             <!-- Button to go back to the home page -->

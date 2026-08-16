@@ -1,53 +1,7 @@
-/* ==========================================
-   TIMER CIRCLE
-   ========================================== */
-
-.app-circle {
+#image {
     position: relative;
-    margin: 0 auto;
-    width: 200px;
-    height: 320px;
-}
-
-.circle-shape {
-    pointer-events: none;
-}
-
-.semi-circle {
-    position: absolute;
-    width: 100px;
-    height: 200px;
-    box-sizing: border-box;
-    border: solid 6px;
-}
-
-.left-side {
-    top: 0;
-    left: 0;
-    transform-origin: right center;
-    transform: rotate(0deg);
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    border-right: none;
-    z-index: 2;
-}
-
-.right-side {
-    top: 0;
-    left: 100px;
-    transform-origin: left center;
-    transform: rotate(0deg);
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    border-left: none;
-}
-
-.circle {
-    border-color: #bf5239;
-}
-
-.circle-mask {
-    border-color: #e85a71;
+    width: 250px;
+    height: 250px;
 }
 
 /* ==========================================
@@ -55,44 +9,41 @@
    ========================================== */
 
 .timer-display {
-    font-family: "Droid Sans Mono", monospace;
-    font-size: 250%;
-    position: relative;
-    top: 50px;
-    color: #d8e9ef;
-}
-
-.timer-message {
     font-family: inherit;
-    position: relative;
-    top: 54px;
-    min-height: 1rem;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #d8e9ef;
+    font-size: 3rem;
+    font-weight: bold;
+
+    /* Absolute Positionierung im Ring */
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    background: linear-gradient(
+            105deg,
+            #a16d2a 0%,
+            #e3b16f 40%,
+            #fcecd0 50%, /* Das ist der helle Lichtstreif */
+            #e3a96f 60%,
+            #8c5b1a 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+
+    filter: drop-shadow(1px 1px 0px #5c4308)
+    drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 10px rgba(227, 193, 111, 0.3));
+
 }
 
 /* ==========================================
    BUTTON
    ========================================== */
 
-.start-btn {
-    position: relative;
-    font-family: inherit;
-    font-size: 80%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    background: none;
-    outline: none;
-    color: #d8e9ef;
-    cursor: pointer;
-}
-
 .timer-settings {
-    position: relative;
-    top: 66px;
     display: grid;
     gap: 0.55rem;
     justify-items: center;
@@ -104,26 +55,12 @@
     gap: 0.45rem;
 }
 
-.stop-btn,
-.reset-btn {
-    font-family: inherit;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid rgb(216 233 239 / 0.75);
-    border-radius: 6px;
-    background: rgb(12 31 37 / 0.55);
-    color: #d8e9ef;
-    cursor: pointer;
-}
-
 .custom-time {
     display: flex;
     align-items: center;
     gap: 0.4rem;
     color: #d8e9ef;
     font-size: 0.7rem;
-    text-transform: uppercase;
 }
 
 #custom-minutes {
@@ -139,21 +76,48 @@
     border-radius: 6px;
 }
 
-.timer-actions {
-    position: relative;
-    top: 76px;
-}
-
 .start-btn,
 .stop-btn,
 .reset-btn {
     min-width: 54px;
     height: 30px;
+    font-family: inherit;
+    font-size: 1rem;
     padding: 0 0.45rem;
+    cursor: pointer;
 }
 
-.start-btn:hover,
-.stop-btn:hover,
+.start-btn {
+    border: 1px solid rgb(216 233 239 / 0.75);
+    border-radius: 6px;
+    background: rgb(12 31 37 / 0.55);
+    color: #d8e9ef;
+}
+
+.stop-btn{
+    border: 1px solid rgb(216 233 239 / 0.75);
+    border-radius: 6px;
+    background: rgb(12 31 37 / 0.55);
+    color: #d8e9ef;
+}
+
+.reset-btn {
+    border: 1px solid rgb(216 233 239 / 0.75);
+    border-radius: 6px;
+    background: rgb(12 31 37 / 0.55);
+    color: #d8e9ef;
+}
+
+.start-btn:hover{
+    color: #90c0d1;
+    border-color: #90c0d1;
+}
+
+.stop-btn:hover {
+    color: #90c0d1;
+    border-color: #90c0d1;
+}
+
 .reset-btn:hover {
     color: #90c0d1;
     border-color: #90c0d1;

@@ -13,7 +13,6 @@ const startButton = document.querySelector(".start-btn");
 const stopButton = document.querySelector(".stop-btn");
 const resetButton = document.querySelector(".reset-btn");
 const customMinutesInput = document.getElementById("custom-minutes");
-const timerMessage = document.querySelector(".timer-message");
 
 const openingVideo = document.getElementById("openingVideo");
 const bgVideo = document.getElementById("bgVideo");
@@ -134,10 +133,6 @@ function renderTime() {
     secondElement.textContent = formatSeconds(seconds);
 }
 
-function showMessage(message) {
-    timerMessage.textContent = message;
-}
-
 function clampMinutes(minutes) {
     if (Number.isNaN(minutes)) {
         return selectedMinutes;
@@ -168,7 +163,6 @@ function startTimer() {
     }
 
     isRunning = true;
-    showMessage("focus time");
     startButton.textContent = "running";
     renderTime();
 
@@ -191,7 +185,6 @@ function stopTimer() {
     intervalId = null;
     isRunning = false;
     startButton.textContent = "resume";
-    showMessage("paused");
 }
 
 function resetTimer() {
@@ -200,14 +193,12 @@ function resetTimer() {
     isRunning = false;
     totalSeconds = selectedMinutes * 60;
     startButton.textContent = "start";
-    showMessage("ready");
     renderTime();
 }
 
 function completeTimer() {
     stopTimer();
     playBell();
-    showMessage("session complete");
     startButton.textContent = "start";
     totalSeconds = selectedMinutes * 60;
 }
