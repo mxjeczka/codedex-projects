@@ -28,11 +28,43 @@ let isMusicOn = false;
    VIDEO CONTROL
    ========================================== */
 
+/* Show the page after the background video is ready. */
+function showPage() {
+    bgVideo.classList.add("is-visible");
+    document.body.classList.remove("is-loading");
+}
+
 /* Keep the looping background video running quietly. */
 function playBackgroundVideo() {
     bgVideo.muted = true;
     bgVideo.loop = true;
-    bgVideo.play().catch(() => {});
+    bgVideo.play().catch(() => {
+        showPage();
+    });
+}
+
+/* Wait for the background video before showing the page. */
+function loadBackgroundVideo() {
+    if (bgVideo.readyState >= 3) {
+        showPage();
+        playBackgroundVideo();
+        return;
+    }
+
+    bgVideo.addEventListener("canplay", () => {
+        showPage();
+        playBackgroundVideo();
+    }, { once: true });
+
+    bgVideo.addEventListener("error", () => {
+        showPage();
+    }, { once: true });
+
+    setTimeout(() => {
+        showPage();
+    }, 3000);
+
+    bgVideo.load();
 }
 
 /* ==========================================
@@ -231,5 +263,5 @@ musicButton.addEventListener("click", () => {
    APP START
    ========================================== */
 
-playBackgroundVideo();
+loadBackgroundVideo();
 renderTime();
