@@ -2,20 +2,16 @@
    PAGE ELEMENTS
    ========================================== */
 
-const firstPage = document.getElementById("first-page");
-const secondPage = document.getElementById("second-page");
-const nextPageButton = document.getElementById("next-page-btn");
-const backButton = document.getElementById("back-btn");
-
 const minuteElement = document.querySelector(".minutes");
 const secondElement = document.querySelector(".seconds");
 const startButton = document.querySelector(".start-btn");
 const stopButton = document.querySelector(".stop-btn");
 const resetButton = document.querySelector(".reset-btn");
 const customMinutesInput = document.getElementById("custom-minutes");
+const musicButton = document.getElementById("music-btn");
 
-const openingVideo = document.getElementById("openingVideo");
 const bgVideo = document.getElementById("bgVideo");
+const backgroundMusic = document.getElementById("backgroundMusic");
 
 /* ==========================================
    TIMER STATE
@@ -26,92 +22,11 @@ let selectedMinutes = Number.parseInt(minuteElement.textContent, 10);
 let totalSeconds = selectedMinutes * 60;
 let intervalId = null;
 let isRunning = false;
-
-/* ==========================================
-   PAGE SWITCHING
-   ========================================== */
-
-/* Show the intro page and hide the timer page. */
-function showFirstPage() {
-    secondPage.classList.add("hidden");
-    firstPage.classList.remove("hidden");
-}
-
-/* Show the timer page and hide the intro page. */
-function showSecondPage() {
-    firstPage.classList.add("hidden");
-    secondPage.classList.remove("hidden");
-}
+let isMusicOn = false;
 
 /* ==========================================
    VIDEO CONTROL
    ========================================== */
-
-/* Make the background video visible and start playback. */
-function showBackgroundVideo() {
-    bgVideo.classList.add("is-visible");
-    playBackgroundVideo();
-}
-
-/* Stop and hide the background video. */
-function hideBackgroundVideo() {
-    bgVideo.pause();
-    bgVideo.currentTime = 0;
-    bgVideo.classList.remove("is-visible");
-}
-
-/* Reset the opening video to its first visible frame. */
-function resetOpeningVideo() {
-    openingVideo.pause();
-    openingVideo.currentTime = 0;
-    openingVideo.classList.remove("fade-out");
-    openingVideo.classList.add("is-visible");
-}
-
-/* Fade from the opening video into the timer page. */
-function fadeToSecondPage() {
-    showBackgroundVideo();
-    showSecondPage();
-    openingVideo.classList.add("fade-out");
-}
-
-/* Play the opening video before showing the timer page. */
-async function playOpeningVideo() {
-    nextPageButton.disabled = true;
-    firstPage.classList.add("hidden");
-    openingVideo.currentTime = 0;
-    openingVideo.classList.remove("fade-out");
-    openingVideo.classList.add("is-visible");
-
-    try {
-        await openingVideo.play();
-    } catch {
-        fadeToSecondPage();
-        nextPageButton.disabled = false;
-        return;
-    }
-
-    const fadeEarlyStart = 1.0;
-    let fadeTriggered = false;
-
-    const checkTime = () => {
-        const timeLeft = openingVideo.duration - openingVideo.currentTime;
-
-        if (timeLeft <= fadeEarlyStart && !fadeTriggered) {
-            fadeTriggered = true;
-            openingVideo.classList.add("fade-out");
-            showBackgroundVideo();
-        }
-    };
-
-    openingVideo.addEventListener("timeupdate", checkTime);
-
-    openingVideo.addEventListener("ended", () => {
-        openingVideo.removeEventListener("timeupdate", checkTime);
-        showSecondPage();
-        nextPageButton.disabled = false;
-    }, { once: true });
-}
 
 /* Keep the looping background video running quietly. */
 function playBackgroundVideo() {
@@ -219,6 +134,44 @@ function completeTimer() {
    SOUND
    ========================================== */
 
+/* Update the music button icon and label. */
+function updateMusicButton() {
+    musicButton.classList.toggle("is-music-on", isMusicOn);
+    musicButton.setAttribute("aria-label", isMusicOn ? "Turn music off" : "Turn music on");
+}
+
+/* Start the background music from the beginning. */
+function turnMusicOn() {
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+    backgroundMusic.loop = true;
+    isMusicOn = true;
+    updateMusicButton();
+
+    backgroundMusic.play().catch(() => {
+        isMusicOn = false;
+        updateMusicButton();
+    });
+}
+
+/* Turn the background music off and reset it. */
+function turnMusicOff() {
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+    isMusicOn = false;
+    updateMusicButton();
+}
+
+/* Switch the background music on or off. */
+function toggleMusic() {
+    if (isMusicOn) {
+        turnMusicOff();
+        return;
+    }
+
+    turnMusicOn();
+}
+
 /* Play the bell sound, or use a generated tone if the file cannot play. */
 function playBell() {
     const bell = new Audio("./sounds/bell.wav");
@@ -254,21 +207,6 @@ function playFallbackTone() {
    EVENTS
    ========================================== */
 
-nextPageButton.addEventListener("click", async () => {
-    if (document.fonts) {
-        await document.fonts.load("1em TrajanusBricks");
-    }
-
-    await playOpeningVideo();
-});
-
-backButton.addEventListener("click", () => {
-    resetTimer();
-    hideBackgroundVideo();
-    resetOpeningVideo();
-    showFirstPage();
-});
-
 startButton.addEventListener("click", () => {
     startTimer();
 });
@@ -285,8 +223,13 @@ customMinutesInput.addEventListener("change", () => {
     setSessionMinutes(Number.parseInt(customMinutesInput.value, 10));
 });
 
+musicButton.addEventListener("click", () => {
+    toggleMusic();
+});
+
 /* ==========================================
    APP START
    ========================================== */
 
+playBackgroundVideo();
 renderTime();

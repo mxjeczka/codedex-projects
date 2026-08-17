@@ -1,0 +1,196 @@
+/* ==========================================
+   TIMER IMAGE
+   ========================================== */
+
+#image {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin-top: 8rem;
+    margin-right: 3rem;
+}
+
+/* ==========================================
+   COUNTER
+   ========================================== */
+
+.timer-display {
+    font-family: inherit;
+    font-size: 3rem;
+    font-weight: bold;
+
+    position: absolute;
+    margin-top: 13.5rem;
+    margin-right: 3rem;
+    z-index: 2;
+
+    background: linear-gradient(
+            105deg,
+            #a16d2a 0%,
+            #e3b16f 40%,
+            #fcecd0 50%,
+            #e3a96f 60%,
+            #8c5b1a 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+
+    filter: drop-shadow(1px 1px 0px #5c4308) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 10px rgba(227, 193, 111, 0.3));
+
+}
+
+/* ==========================================
+   TIMER SETTINGS
+   ========================================== */
+
+.timer-settings {
+    display: grid;
+    gap: 0.55rem;
+    justify-items: center;
+    margin-right: 3rem;
+}
+
+.custom-time {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd291;
+
+    filter: drop-shadow(0px 1px 1px #2b1f0b)
+    drop-shadow(1px 1px 1px #2b1f0b)
+    drop-shadow(-1px 1px 1px #2b1f0b)
+    drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.9));
+}
+
+#custom-minutes {
+    width: 60px;
+    height: 35px;
+
+    font: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    color: #fcecd0;
+    background: rgba(14, 24, 21, 0.75);
+
+    border: 1.5px solid rgba(227, 177, 111, 0.3);
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#custom-minutes:focus {
+    border-color: #e3b16f;
+}
+
+/* ==========================================
+   TIMER BUTTONS
+   ========================================== */
+
+.timer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* Shared base style for timer and music buttons. */
+.start-btn, .stop-btn, .reset-btn{
+    margin-top: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fcecd0;
+
+    min-width: 80px;
+    height: 35px;
+    padding: 0 0.5rem;
+    border: 1.5px solid rgba(227, 177, 111, 0.4);
+    border-radius: 6px;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #0d261d 0%, #1a4231 40%, #523f1c 70%, #2b1f0b 100%);
+    background-size: 300% 100%;
+
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Start button gradient position. */
+.start-btn {
+    background-position: 0% 50%;
+}
+
+/* Stop button gradient position. */
+.stop-btn {
+    background-position: 50% 50%;
+}
+
+/* Reset button gradient position. */
+.reset-btn {
+    background-position: 100% 50%;
+    margin-right: 3rem;
+}
+
+/* Shared hover effect for timer and music buttons. */
+.start-btn:hover, .stop-btn:hover, .reset-btn:hover {
+    color: #ffffff;
+    border-color: #e3b16f;
+    box-shadow: 0 0 12px rgba(227, 177, 111, 0.4);
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   MUSIC BUTTON
+   ========================================== */
+
+#music-btn {
+    width: 50px;
+    height: 40px;
+
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fcecd0;
+    background: linear-gradient(135deg, #163824 0%, #0b1f14 100%);
+    border: 1.5px solid #4a7c59;
+    border-radius: 6px;
+
+    box-shadow: 0 0 10px rgba(74, 124, 89, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#music-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+#music-btn .icon-off {
+    display: none;
+}
+
+#music-btn.is-music-on .icon-on {
+    display: none;
+}
+
+#music-btn.is-music-on .icon-off {
+    display: block;
+}
+
+#music-btn:hover {
+    border-color: #e3b16f;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(227, 177, 111, 0.5);
+    transform: scale(1.05);
+}
