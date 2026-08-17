@@ -31,11 +31,13 @@ let isRunning = false;
    PAGE SWITCHING
    ========================================== */
 
+/* Show the intro page and hide the timer page. */
 function showFirstPage() {
     secondPage.classList.add("hidden");
     firstPage.classList.remove("hidden");
 }
 
+/* Show the timer page and hide the intro page. */
 function showSecondPage() {
     firstPage.classList.add("hidden");
     secondPage.classList.remove("hidden");
@@ -45,17 +47,20 @@ function showSecondPage() {
    VIDEO CONTROL
    ========================================== */
 
+/* Make the background video visible and start playback. */
 function showBackgroundVideo() {
     bgVideo.classList.add("is-visible");
     playBackgroundVideo();
 }
 
+/* Stop and hide the background video. */
 function hideBackgroundVideo() {
     bgVideo.pause();
     bgVideo.currentTime = 0;
     bgVideo.classList.remove("is-visible");
 }
 
+/* Reset the opening video to its first visible frame. */
 function resetOpeningVideo() {
     openingVideo.pause();
     openingVideo.currentTime = 0;
@@ -63,12 +68,14 @@ function resetOpeningVideo() {
     openingVideo.classList.add("is-visible");
 }
 
+/* Fade from the opening video into the timer page. */
 function fadeToSecondPage() {
     showBackgroundVideo();
     showSecondPage();
     openingVideo.classList.add("fade-out");
 }
 
+/* Play the opening video before showing the timer page. */
 async function playOpeningVideo() {
     nextPageButton.disabled = true;
     firstPage.classList.add("hidden");
@@ -90,26 +97,23 @@ async function playOpeningVideo() {
     const checkTime = () => {
         const timeLeft = openingVideo.duration - openingVideo.currentTime;
 
-        // Wenn die Restzeit erreicht ist, starten wir das Verblassen vorab
         if (timeLeft <= fadeEarlyStart && !fadeTriggered) {
             fadeTriggered = true;
-            openingVideo.classList.add("fade-out"); // Aktiviert Ihre CSS-Transition
-            showBackgroundVideo();                 // Blendet das neue Video im Hintergrund ein
+            openingVideo.classList.add("fade-out");
+            showBackgroundVideo();
         }
     };
 
-    // Prüft bei jedem Frame-Wechsel die aktuelle Zeit des Videos
     openingVideo.addEventListener("timeupdate", checkTime);
 
-    // Wenn das Video komplett vorbei ist, wechseln wir nur noch die Seite
     openingVideo.addEventListener("ended", () => {
-        openingVideo.removeEventListener("timeupdate", checkTime); // Sauber aufräumen
-        showSecondPage(); // Nur noch die Seite umschalten, da das Fading schon läuft
+        openingVideo.removeEventListener("timeupdate", checkTime);
+        showSecondPage();
         nextPageButton.disabled = false;
     }, { once: true });
-    // =========================================================
 }
 
+/* Keep the looping background video running quietly. */
 function playBackgroundVideo() {
     bgVideo.muted = true;
     bgVideo.loop = true;
@@ -120,10 +124,12 @@ function playBackgroundVideo() {
    TIMER DISPLAY
    ========================================== */
 
+/* Add a leading zero to single-digit seconds. */
 function formatSeconds(seconds) {
     return seconds < 10 ? `0${seconds}` : seconds;
 }
 
+/* Update the timer text from the current remaining seconds. */
 function renderTime() {
     const safeSeconds = Math.max(totalSeconds, 0);
     const minutes = Math.floor(safeSeconds / 60);
@@ -133,6 +139,7 @@ function renderTime() {
     secondElement.textContent = formatSeconds(seconds);
 }
 
+/* Keep custom minutes inside the supported range. */
 function clampMinutes(minutes) {
     if (Number.isNaN(minutes)) {
         return selectedMinutes;
@@ -141,6 +148,7 @@ function clampMinutes(minutes) {
     return Math.min(Math.max(minutes, 1), 59);
 }
 
+/* Save the selected session length and reset the timer. */
 function setSessionMinutes(minutes) {
     selectedMinutes = clampMinutes(minutes);
     customMinutesInput.value = selectedMinutes;
@@ -152,6 +160,7 @@ function setSessionMinutes(minutes) {
    TIMER CONTROL
    ========================================== */
 
+/* Start or resume the countdown. */
 function startTimer() {
     if (isRunning) {
         alert("Session has already started.");
@@ -176,6 +185,7 @@ function startTimer() {
     }, 1000);
 }
 
+/* Pause the countdown without resetting the time. */
 function stopTimer() {
     if (!intervalId) {
         return;
@@ -187,6 +197,7 @@ function stopTimer() {
     startButton.textContent = "resume";
 }
 
+/* Reset the countdown to the selected session length. */
 function resetTimer() {
     clearInterval(intervalId);
     intervalId = null;
@@ -196,6 +207,7 @@ function resetTimer() {
     renderTime();
 }
 
+/* Finish the session and play the completion sound. */
 function completeTimer() {
     stopTimer();
     playBell();
@@ -207,6 +219,7 @@ function completeTimer() {
    SOUND
    ========================================== */
 
+/* Play the bell sound, or use a generated tone if the file cannot play. */
 function playBell() {
     const bell = new Audio("./sounds/bell.wav");
 
@@ -215,6 +228,7 @@ function playBell() {
     });
 }
 
+/* Generate a short fallback tone with the Web Audio API. */
 function playFallbackTone() {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
 

@@ -1,7 +1,13 @@
+/* ==========================================
+   TIMER IMAGE
+   ========================================== */
+
 #image {
     position: relative;
     width: 250px;
     height: 250px;
+    margin-top: 8rem;
+    margin-right: 3rem;
 }
 
 /* ==========================================
@@ -13,11 +19,9 @@
     font-size: 3rem;
     font-weight: bold;
 
-    /* Absolute Positionierung im Ring */
     position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 13.5rem;
+    margin-right: 3rem;
     z-index: 2;
 
     background: linear-gradient(
@@ -38,14 +42,14 @@
 }
 
 /* ==========================================
-   BUTTON
+   TIMER SETTINGS
    ========================================== */
 
 .timer-settings {
     display: grid;
     gap: 0.55rem;
     justify-items: center;
-    margin-top: 1rem;
+    margin-right: 3rem;
 }
 
 .custom-time {
@@ -56,7 +60,6 @@
     font-weight: bold;
     color: #ffd291;
 
-    /* Starke, dunkle Konturschatten + weicher dunkler Schatten gegen den hellen Nebel */
     filter: drop-shadow(0px 1px 1px #2b1f0b)
     drop-shadow(1px 1px 1px #2b1f0b)
     drop-shadow(-1px 1px 1px #2b1f0b)
@@ -84,6 +87,9 @@
     border-color: #e3b16f;
 }
 
+/* ==========================================
+   TIMER BUTTONS
+   ========================================== */
 
 .timer-actions {
     display: flex;
@@ -91,9 +97,9 @@
     gap: 0.75rem;
 }
 
-/* Gemeinsame Basis für alle drei Buttons */
+/* Shared base style for all timer buttons. */
 .start-btn, .stop-btn, .reset-btn {
-    margin-top: 4.5rem;
+    margin-top: 2rem;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 500;
@@ -106,38 +112,41 @@
     border-radius: 6px;
     cursor: pointer;
 
-    /* Der übergreifende Farbverlauf (Mystisches Waldgrün zu magischem Gold) */
     background: linear-gradient(90deg, #0d261d 0%, #1a4231 40%, #523f1c 70%, #2b1f0b 100%);
-    background-size: 300% 100%; /* Vergrößert den Hintergrund für den Übergang */
+    background-size: 300% 100%;
 
-    /* Weicher Übergang für Hover-Effekte */
     transition: all 0.4s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Verschiebung des Verlaufs für den linken Button (Mehr Grün) */
+/* Start button gradient position. */
 .start-btn {
     background-position: 0% 50%;
 }
 
-/* Verschiebung für den mittleren Button (Übergang) */
+/* Stop button gradient position. */
 .stop-btn {
     background-position: 50% 50%;
 }
 
-/* Verschiebung für den rechten Button (Mehr Gold/Dunkelgold) */
+/* Reset button gradient position. */
 .reset-btn {
     background-position: 100% 50%;
+    margin-right: 3rem;
 }
 
-/* Einheitlicher Hover-Effekt: Die Buttons leuchten auf, wenn man drüberfährt */
+/* Shared hover effect for timer buttons. */
 .start-btn:hover, .stop-btn:hover, .reset-btn:hover {
     color: #ffffff;
     border-color: #e3b16f;
     box-shadow: 0 0 12px rgba(227, 177, 111, 0.4);
     filter: brightness(1.2);
-    transform: translateY(-2px); /* Minimales Anheben */
+    transform: translateY(-2px);
 }
+
+/* ==========================================
+   BACK BUTTON
+   ========================================== */
 
 #back-btn {
     width: 70px;
@@ -156,14 +165,13 @@
     border: 1.5px solid #4a7c59;
     border-radius: 6px;
 
-    /* Ein weicherer, atmosphärischer Schatten statt grellem Neon */
     box-shadow: 0 0 10px rgba(74, 124, 89, 0.4);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 #back-btn:hover {
-    border-color: #e3b16f; /* Wechselt beim Hovern zu Gold, passend zum Ring! */
+    border-color: #e3b16f;
     color: #ffffff;
     box-shadow: 0 0 15px rgba(227, 177, 111, 0.5);
     transform: scale(1.05);

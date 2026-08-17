@@ -2,6 +2,8 @@
    FONT
    ========================================== */
 
+/* TrajanusBricks font by Manfred Klein, found and downloaded from dafont. */
+/* Source: https://www.dafont.com/de/trajanusbricks.font */
 @font-face {
     font-family: "TrajanusBricks";
     src: url("../font/TrajanusBricks.ttf") format("truetype");

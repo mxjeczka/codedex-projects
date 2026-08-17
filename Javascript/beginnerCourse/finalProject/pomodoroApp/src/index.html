@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro App</title>
-    <!-- Link the external CSS stylesheet for page styling -->
+    <!-- Main stylesheet bundle. -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- Opening video: "A forest with a path through the middle of it" by Valentyn Ihnatkin, found and downloaded from Vecteezy. -->
+<!-- Source: https://www.vecteezy.com/video/50735592-a-forest-with-a-path-through-the-middle-of-it -->
 <video id="openingVideo" class="background-video is-visible" muted preload="auto">
     <source src="background/openingScene.mp4" type="video/mp4">
 </video>
 
+<!-- Background video: "AI Generated Dreamy Waterfall In Deep Jungle" by eQuinox Studio, found and downloaded from Vecteezy. -->
+<!-- Source: https://www.vecteezy.com/video/40858391-ai-generated-dreamy-waterfall-in-deep-jungle -->
 <video id="bgVideo" class="background-video" muted loop preload="auto">
     <source src="background/background.mp4" type="video/mp4">
 </video>
 
 <main class="content">
+    <!-- First page with curved intro text and start button. -->
     <section id="first-page">
         <h1>
             <svg viewBox="350 125 500 400" class="text-curve-svg">
@@ -30,24 +35,23 @@
             </svg>
         </h1>
 
-        <!-- Inner container to vertically group the form elements together -->
+        <!-- Intro page controls. -->
         <div class="pomodoro-container">
-
-            <!-- Trigger button that brings you to the next page -->
             <button id="next-page-btn">begin the journey</button>
         </div>
     </section>
 
+    <!-- Second page with timer controls. -->
     <section id="second-page" class="hidden">
         <div class="pomodoro-container">
             <img id="image" src="image/lortRing.png" alt="">
 
-            <!-- Timer text -->
-            <!-- Shows the minutes and seconds. -->
+            <!-- Timer display. -->
             <div class="timer-display">
                 <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
             </div>
 
+            <!-- Custom minute input. -->
             <div class="timer-settings" aria-label="timer settings">
                 <label class="custom-time">
                     <span>min</span>
@@ -61,7 +65,7 @@
                 <button class="reset-btn" type="button">reset</button>
             </div>
 
-            <!-- Button to go back to the home page -->
+            <!-- Back navigation. -->
             <button id="back-btn">back</button>
         </div>
     </section>
