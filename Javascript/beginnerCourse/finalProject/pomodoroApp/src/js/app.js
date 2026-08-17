@@ -107,6 +107,11 @@ function setSessionMinutes(minutes) {
    TIMER CONTROL
    ========================================== */
 
+/* Lock or unlock the custom minutes input. */
+function setCustomMinutesDisabled(isDisabled) {
+    customMinutesInput.disabled = isDisabled;
+}
+
 /* Start or resume the countdown. */
 function startTimer() {
     if (isRunning) {
@@ -119,6 +124,7 @@ function startTimer() {
     }
 
     isRunning = true;
+    setCustomMinutesDisabled(true);
     startButton.textContent = "running";
     renderTime();
 
@@ -141,6 +147,7 @@ function stopTimer() {
     clearInterval(intervalId);
     intervalId = null;
     isRunning = false;
+    setCustomMinutesDisabled(false);
     startButton.textContent = "resume";
 }
 
@@ -149,6 +156,7 @@ function resetTimer() {
     clearInterval(intervalId);
     intervalId = null;
     isRunning = false;
+    setCustomMinutesDisabled(false);
     totalSeconds = selectedMinutes * 60;
     startButton.textContent = "start";
     renderTime();

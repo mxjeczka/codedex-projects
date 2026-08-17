@@ -87,6 +87,11 @@
     border-color: #e3b16f;
 }
 
+#custom-minutes:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
 /* ==========================================
    TIMER BUTTONS
    ========================================== */
