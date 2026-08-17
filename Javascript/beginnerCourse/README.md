@@ -23,9 +23,18 @@ Features:
 
 ---
 
-### 🚧 Final Project (Coming Soon)
+### 💍 Lord of the Rings Pomodoro Timer (Final Project)
 
-Details and implementation will be added once the final project is completed.
+A fantasy-themed Pomodoro timer inspired by the world of Lord of the Rings.
+
+Features:
+
+* Pomodoro timer with work and break sessions
+* Custom Lord of the Rings inspired ring timer
+* Looping fantasy background video
+* Optional looping background music
+* Interactive timer controls
+* Fantasy-themed visual design
 
 => See the project folder for more details and a dedicated README.
 
