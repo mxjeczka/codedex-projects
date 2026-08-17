@@ -24,6 +24,9 @@ let intervalId = null;
 let isRunning = false;
 let isMusicOn = false;
 
+const normalMusicVolume = 1;
+const loweredMusicVolume = 0.25;
+
 /* ==========================================
    VIDEO CONTROL
    ========================================== */
@@ -54,11 +57,11 @@ function loadBackgroundVideo() {
     bgVideo.addEventListener("canplay", () => {
         showPage();
         playBackgroundVideo();
-    }, { once: true });
+    }, {once: true});
 
     bgVideo.addEventListener("error", () => {
         showPage();
-    }, { once: true });
+    }, {once: true});
 
     setTimeout(() => {
         showPage();
@@ -185,6 +188,7 @@ function turnMusicOn() {
     backgroundMusic.pause();
     backgroundMusic.currentTime = 0;
     backgroundMusic.loop = true;
+    backgroundMusic.volume = normalMusicVolume;
     isMusicOn = true;
     updateMusicButton();
 
@@ -212,11 +216,32 @@ function toggleMusic() {
     turnMusicOn();
 }
 
-/* Play the bell sound, or use a generated tone if the file cannot play. */
+/* Lower the background music while the ringtone plays. */
+function lowerBackgroundMusic() {
+    if (!isMusicOn || backgroundMusic.paused) {
+        return;
+    }
+
+    backgroundMusic.volume = loweredMusicVolume;
+}
+
+/* Restore the background music volume. */
+function restoreBackgroundMusic() {
+    backgroundMusic.volume = normalMusicVolume;
+}
+
+/* Play the ringtone, or use a generated tone if the file cannot play.
+* Ringtone: "Ringtone 030" by Universfield, found and downloaded from Pixabay.
+* Source: https://pixabay.com/de/sound-effects/musical-ringtone-030-437513/ */
 function playBell() {
-    const bell = new Audio("./sounds/bell.wav");
+    const bell = new Audio("./resources/music/universfield-ringtone-023-376906.mp3");
+
+    lowerBackgroundMusic();
+    bell.addEventListener("ended", restoreBackgroundMusic, {once: true});
+    bell.addEventListener("error", restoreBackgroundMusic, {once: true});
 
     bell.play().catch(() => {
+        restoreBackgroundMusic();
         playFallbackTone();
     });
 }
